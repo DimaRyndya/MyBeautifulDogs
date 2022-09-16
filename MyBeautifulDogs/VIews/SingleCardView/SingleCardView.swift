@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SingleCardView: View {
-    @EnvironmentObject var dog: DogImages
+    @EnvironmentObject var dog: Dog
     var index: Int
 
     var body: some View {
@@ -17,6 +17,6 @@ struct SingleCardView: View {
 struct SingleCardView_Previews: PreviewProvider {
     static var previews: some View {
         SingleCardView(index: 1)
-            .environmentObject(DogImages())
+            .environmentObject(Dog())
     }
 }

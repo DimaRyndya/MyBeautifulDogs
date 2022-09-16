@@ -14,9 +14,10 @@
 		1D1664D028D3B18200951CD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664CF28D3B18200951CD8 /* MainView.swift */; };
 		1D1664D228D3B1AD00951CD8 /* DogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */; };
 		1D1664D428D3B1BD00951CD8 /* MyDogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */; };
-		1D1664D628D49BC200951CD8 /* DogImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D528D49BC200951CD8 /* DogImages.swift */; };
+		1D1664D628D49BC200951CD8 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D528D49BC200951CD8 /* Dog.swift */; };
 		1D1664DA28D49F9700951CD8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D928D49F9700951CD8 /* Settings.swift */; };
 		1D1664DD28D4A5CF00951CD8 /* SingleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664DC28D4A5CF00951CD8 /* SingleCardView.swift */; };
+		1D1664DF28D4D37E00951CD8 /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664DE28D4D37E00951CD8 /* CardsListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		1D1664CF28D3B18200951CD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailView.swift; sourceTree = "<group>"; };
 		1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDogsView.swift; sourceTree = "<group>"; };
-		1D1664D528D49BC200951CD8 /* DogImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImages.swift; sourceTree = "<group>"; };
+		1D1664D528D49BC200951CD8 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		1D1664D928D49F9700951CD8 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1D1664DC28D4A5CF00951CD8 /* SingleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCardView.swift; sourceTree = "<group>"; };
+		1D1664DE28D4D37E00951CD8 /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +91,7 @@
 				1D1664DB28D4A55C00951CD8 /* SingleCardView */,
 				1D1664C128D3B02300951CD8 /* ContentView.swift */,
 				1D1664CF28D3B18200951CD8 /* MainView.swift */,
-				1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */,
-				1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */,
+				1D1664DE28D4D37E00951CD8 /* CardsListView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -98,7 +99,7 @@
 		1D1664D728D49DFB00951CD8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1D1664D528D49BC200951CD8 /* DogImages.swift */,
+				1D1664D528D49BC200951CD8 /* Dog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				1D1664DC28D4A5CF00951CD8 /* SingleCardView.swift */,
+				1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */,
+				1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */,
 			);
 			path = SingleCardView;
 			sourceTree = "<group>";
@@ -188,10 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1664D628D49BC200951CD8 /* DogImages.swift in Sources */,
+				1D1664D628D49BC200951CD8 /* Dog.swift in Sources */,
 				1D1664C228D3B02300951CD8 /* ContentView.swift in Sources */,
 				1D1664D028D3B18200951CD8 /* MainView.swift in Sources */,
 				1D1664D428D3B1BD00951CD8 /* MyDogsView.swift in Sources */,
+				1D1664DF28D4D37E00951CD8 /* CardsListView.swift in Sources */,
 				1D1664DA28D49F9700951CD8 /* Settings.swift in Sources */,
 				1D1664D228D3B1AD00951CD8 /* DogDetailView.swift in Sources */,
 				1D1664DD28D4A5CF00951CD8 /* SingleCardView.swift in Sources */,
