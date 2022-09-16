@@ -1,0 +1,13 @@
+import SwiftUI
+
+struct MyDogsView: View {
+    var body: some View {
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+struct MyDogsView_Previews: PreviewProvider {
+    static var previews: some View {
+        MyDogsView()
+    }
+}
