@@ -1,11 +1,12 @@
 import SwiftUI
 
 struct SingleCardView: View {
-    @EnvironmentObject var dog: Dog
+let dogStore = DogStore()
+
     var index: Int
 
     var body: some View {
-        Image(dog.dogImages[index])
+        Image(dogStore.dogs[index].dogImage)
             .resizable()
             .frame(
                 width: Settings.mainScreenCardSize.width,
@@ -17,6 +18,5 @@ struct SingleCardView: View {
 struct SingleCardView_Previews: PreviewProvider {
     static var previews: some View {
         SingleCardView(index: 1)
-            .environmentObject(Dog())
     }
 }

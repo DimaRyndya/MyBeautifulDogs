@@ -1,18 +1,13 @@
 import SwiftUI
 
 struct CardsListView: View {
-    @EnvironmentObject var dog: Dog
+    let dogStore = DogStore()
 
     var body: some View {
-        List(0..<dog.dogImages.count) { index in
+        List(0..<dogStore.dogs.count, id: \.self) { index in
             HStack {
-                Image(dog.dogImages[index])
-                    .resizable()
-                    .frame(
-                        width: Settings.mainScreenCardSize.width,
-                        height: Settings.mainScreenCardSize.height)
-                    .cornerRadius(20)
-                Text(dog.breez[index])
+                SingleCardView(index: index)
+                Text(dogStore.dogs[index].dogBreed)
             }
         }
     }
@@ -21,6 +16,5 @@ struct CardsListView: View {
 struct CardsListView_Previews: PreviewProvider {
     static var previews: some View {
         CardsListView()
-            .environmentObject(Dog())
     }
 }
