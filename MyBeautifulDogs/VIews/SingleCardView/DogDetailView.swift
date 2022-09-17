@@ -7,8 +7,8 @@ struct DogDetailView: View {
 
     var body: some View {
         VStack {
-            Image(dog.dogs[0].dogImage)
-            Text(dog.dogs[0].dogBreed)
+            Image(viewState.selectedDogCard!.dogImage)
+            Text(viewState.selectedDogCard!.dogBreed)
         }
     }
 }

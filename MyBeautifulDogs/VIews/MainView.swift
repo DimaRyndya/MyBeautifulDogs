@@ -17,7 +17,7 @@ struct MainView: View {
                         SingleCardView(index: dog)
                             .onTapGesture {
                                 viewState.showAllCards.toggle()
-                                //viewState.selectedDogCard = dogStore.dogs[dog]
+                                viewState.selectedDogCard = dogStore.dogs[dog]
                             }
                     }
                 }

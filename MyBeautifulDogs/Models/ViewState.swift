@@ -2,12 +2,12 @@ import SwiftUI
 
 class ViewState: ObservableObject {
     @Published var showAllCards = true
-    @Published var selectedDogCard = DogStore()
+    @Published var selectedDogCard: BreedName?
 
-    convenience init(dog: DogStore) {
+    convenience init(dog: BreedName) {
         self.init()
         showAllCards = false
-       // selectedDogCard.dogs = dog.dogs.hashValue
+        selectedDogCard = dog
     }
 
 }

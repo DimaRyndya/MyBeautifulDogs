@@ -4,10 +4,10 @@ struct CardsListView: View {
     let dogStore = DogStore()
 
     var body: some View {
-        List(0..<dogStore.dogs.count, id: \.self) { index in
+        List(0..<dogStore.dogs.count, id: \.self) { dog in
             HStack {
-                SingleCardView(index: index)
-                Text(dogStore.dogs[index].dogBreed)
+                SingleCardView(index: dog)
+                Text(dogStore.dogs[dog].dogBreed)
             }
         }
     }
