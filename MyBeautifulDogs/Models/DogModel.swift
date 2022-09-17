@@ -1,6 +1,10 @@
 import SwiftUI
 
-enum DogBreed {
+enum BreedName: Identifiable {
+    var id: Int {
+        hashValue
+    }
+
     case BostonTerrier
     case StBernardPuppy
     case CaneCorso

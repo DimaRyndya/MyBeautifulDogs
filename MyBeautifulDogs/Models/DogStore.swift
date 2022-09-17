@@ -1,18 +1,19 @@
 import SwiftUI
 
 struct DogStore {
-    let dogs: [DogBreed] = [
-        DogBreed.BostonTerrier,
-        DogBreed.StBernardPuppy,
-        DogBreed.CaneCorso,
-        DogBreed.ChowChow,
-        DogBreed.Border,
-        DogBreed.PembrokeWelshCorgi,
-        DogBreed.Beagle,
-        DogBreed.YorkshireTerrier,
-        DogBreed.Pomeranian,
-        DogBreed.FrenchBulldog
+    let dogs: [BreedName] = [
+        BreedName.BostonTerrier,
+        BreedName.StBernardPuppy,
+        BreedName.CaneCorso,
+        BreedName.ChowChow,
+        BreedName.Border,
+        BreedName.PembrokeWelshCorgi,
+        BreedName.Beagle,
+        BreedName.YorkshireTerrier,
+        BreedName.Pomeranian,
+        BreedName.FrenchBulldog
 
     ]
 }
+
 

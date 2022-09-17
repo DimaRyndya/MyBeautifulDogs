@@ -1,10 +1,10 @@
 import SwiftUI
 
 struct SingleCardView: View {
-let dogStore = DogStore()
-
+    let dogStore = DogStore()
+    
     var index: Int
-
+    
     var body: some View {
         Image(dogStore.dogs[index].dogImage)
             .resizable()
@@ -13,6 +13,7 @@ let dogStore = DogStore()
                 height: Settings.mainScreenCardSize.height)
             .cornerRadius(20)
     }
+    
 }
 
 struct SingleCardView_Previews: PreviewProvider {
