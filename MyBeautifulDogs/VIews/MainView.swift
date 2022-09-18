@@ -4,24 +4,24 @@ struct MainView: View {
     @EnvironmentObject var viewState: ViewState
     
     let dogStore = DogStore()
-
+    
     let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 10),
         GridItem(.adaptive(minimum: 120), spacing: 10)
     ]
-
+    
     var body: some View {
-            ScrollView(showsIndicators: false) {
-                LazyVGrid(columns: columns) {
-                    ForEach(0..<dogStore.dogs.count) { dog in
-                        SingleCardView(index: dog)
-                            .onTapGesture {
-                                viewState.showAllCards.toggle()
-                                viewState.selectedDogCard = dogStore.dogs[dog]
-                            }
-                    }
+        ScrollView(showsIndicators: false) {
+            LazyVGrid(columns: columns) {
+                ForEach(0..<dogStore.dogs.count) { dog in
+                    SingleCardView(index: dog)
+                        .onTapGesture {
+                            viewState.showAllCards.toggle()
+                            viewState.selectedDogCard = dogStore.dogs[dog]
+                        }
                 }
             }
+        }
     }
 }
 

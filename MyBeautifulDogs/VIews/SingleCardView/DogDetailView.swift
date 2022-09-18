@@ -6,9 +6,14 @@ struct DogDetailView: View {
     let dog = DogStore()
 
     var body: some View {
-        VStack {
-            Image(viewState.selectedDogCard!.dogImage)
-            Text(viewState.selectedDogCard!.dogBreed)
+        ZStack {
+            Button(action: { viewState.showAllCards.toggle() }) {
+                Text("Back")
+            }
+            VStack {
+                Image(viewState.selectedDogCard?.dogImage ?? "")
+                Text(viewState.selectedDogCard?.dogBreed ?? "")
+            }
         }
     }
 }
