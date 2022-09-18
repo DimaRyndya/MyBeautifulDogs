@@ -1,8 +1,17 @@
 import SwiftUI
 
 struct MyDogsView: View {
+    var userDog = UserDogs()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("hello")
+//        List(0..<userDog.userDogs.count, id: \.self) { userDog in
+//            HStack {
+//                SingleCardView(index: userDog)
+//                Image(userDog.userDogs[userDog]?.dogImage ?? "")
+//                Text(userDog.userDogs[userDog]?.dogBreed ?? "")
+//            }
+//        }
     }
 }
 

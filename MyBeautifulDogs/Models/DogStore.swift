@@ -2,18 +2,30 @@ import SwiftUI
 
 struct DogStore {
     let dogs: [BreedName] = [
-        BreedName.BostonTerrier,
-        BreedName.StBernardPuppy,
-        BreedName.CaneCorso,
-        BreedName.ChowChow,
-        BreedName.Border,
-        BreedName.PembrokeWelshCorgi,
-        BreedName.Beagle,
-        BreedName.YorkshireTerrier,
-        BreedName.Pomeranian,
-        BreedName.FrenchBulldog
+        BreedName.bostonTerrier,
+        BreedName.stBernardPuppy,
+        BreedName.caneCorso,
+        BreedName.chowChow,
+        BreedName.border,
+        BreedName.pembrokeWelshCorgi,
+        BreedName.beagle,
+        BreedName.yorkshireTerrier,
+        BreedName.pomeranian,
+        BreedName.frenchBulldog
 
     ]
+
+}
+
+class UserDogs {
+    var userDogs: [BreedName] = []
+
+ func addDog(dogCard: BreedName?) {
+        if let dogCard = dogCard {
+            userDogs.append(dogCard)
+        }
+     }
+
 }
 
 

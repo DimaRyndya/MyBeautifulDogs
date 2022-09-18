@@ -1,42 +1,39 @@
 import SwiftUI
 
-enum BreedName: Identifiable {
-    var id: Int {
-        hashValue
-    }
+enum BreedName {
 
-    case BostonTerrier
-    case StBernardPuppy
-    case CaneCorso
-    case ChowChow
-    case Border
-    case PembrokeWelshCorgi
-    case Beagle
-    case YorkshireTerrier
-    case Pomeranian
-    case FrenchBulldog
+    case bostonTerrier
+    case stBernardPuppy
+    case caneCorso
+    case chowChow
+    case border
+    case pembrokeWelshCorgi
+    case beagle
+    case yorkshireTerrier
+    case pomeranian
+    case frenchBulldog
 
     var dogBreed: String {
         switch self {
-        case .BostonTerrier:
+        case .bostonTerrier:
            return  "Boston Terrier"
-        case .StBernardPuppy:
+        case .stBernardPuppy:
            return  "St Bernard Puppy"
-        case .CaneCorso:
+        case .caneCorso:
            return  "Cane Corso"
-        case .ChowChow:
+        case .chowChow:
            return  "Chow Chow"
-        case .Border:
+        case .border:
            return  "Border"
-        case .PembrokeWelshCorgi:
+        case .pembrokeWelshCorgi:
            return  "Pembroke WelshCorgi"
-        case .Beagle:
+        case .beagle:
            return  "Beagle"
-        case .YorkshireTerrier:
+        case .yorkshireTerrier:
            return  "Yorkshire Terrier"
-        case .Pomeranian:
+        case .pomeranian:
            return  "Pomeranian"
-        case .FrenchBulldog:
+        case .frenchBulldog:
            return  "French Bulldog"
 
         }
@@ -44,26 +41,52 @@ enum BreedName: Identifiable {
 
     var dogImage: String {
         switch self {
-        case .BostonTerrier:
+        case .bostonTerrier:
            return  "boston-terrier"
-        case .StBernardPuppy:
+        case .stBernardPuppy:
            return  "st-bernard-puppy"
-        case .CaneCorso:
+        case .caneCorso:
            return  "cane-corso"
-        case .ChowChow:
+        case .chowChow:
            return  "chowchow"
-        case .Border:
+        case .border:
            return  "border-collie"
-        case .PembrokeWelshCorgi:
+        case .pembrokeWelshCorgi:
            return  "pembroke-welsh-corgi"
-        case .Beagle:
+        case .beagle:
            return  "beagle"
-        case .YorkshireTerrier:
+        case .yorkshireTerrier:
            return  "yorkshire-terrier"
-        case .Pomeranian:
+        case .pomeranian:
            return  "pomeranian"
-        case .FrenchBulldog:
+        case .frenchBulldog:
            return  "french-bulldog"
+
+        }
+    }
+
+    var dogCounter: Int {
+        switch self {
+        case .bostonTerrier:
+           return  0
+        case .stBernardPuppy:
+           return  0
+        case .caneCorso:
+           return  0
+        case .chowChow:
+           return  0
+        case .border:
+           return  0
+        case .pembrokeWelshCorgi:
+           return  0
+        case .beagle:
+           return  0
+        case .yorkshireTerrier:
+           return  0
+        case .pomeranian:
+           return  0
+        case .frenchBulldog:
+           return  0
 
         }
     }
