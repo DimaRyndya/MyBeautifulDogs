@@ -20,7 +20,6 @@
 		1D1664DF28D4D37E00951CD8 /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664DE28D4D37E00951CD8 /* CardsListView.swift */; };
 		1D1664E128D4F0CD00951CD8 /* DogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E028D4F0CD00951CD8 /* DogModel.swift */; };
 		1D1664E328D62FF100951CD8 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E228D62FF100951CD8 /* ViewState.swift */; };
-		1D1664E528D64A2A00951CD8 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E428D64A2A00951CD8 /* Dog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		1D1664DE28D4D37E00951CD8 /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
 		1D1664E028D4F0CD00951CD8 /* DogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModel.swift; sourceTree = "<group>"; };
 		1D1664E228D62FF100951CD8 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		1D1664E428D64A2A00951CD8 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				1D1664D528D49BC200951CD8 /* DogStore.swift */,
 				1D1664E028D4F0CD00951CD8 /* DogModel.swift */,
 				1D1664E228D62FF100951CD8 /* ViewState.swift */,
-				1D1664E428D64A2A00951CD8 /* Dog.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 			files = (
 				1D1664D628D49BC200951CD8 /* DogStore.swift in Sources */,
 				1D1664C228D3B02300951CD8 /* ContentView.swift in Sources */,
-				1D1664E528D64A2A00951CD8 /* Dog.swift in Sources */,
 				1D1664D028D3B18200951CD8 /* MainView.swift in Sources */,
 				1D1664E328D62FF100951CD8 /* ViewState.swift in Sources */,
 				1D1664D428D3B1BD00951CD8 /* MyDogsView.swift in Sources */,

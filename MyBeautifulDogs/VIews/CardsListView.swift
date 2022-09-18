@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct CardsListView: View {
+    @EnvironmentObject var viewState: ViewState
+
     let dogStore = DogStore()
 
     var body: some View {
@@ -8,6 +10,11 @@ struct CardsListView: View {
             HStack {
                 SingleCardView(index: dog)
                 Text(dogStore.dogs[dog].dogBreed)
+                
+            }
+            .onTapGesture {
+                viewState.showAllCards.toggle()
+                viewState.selectedDogCard = dogStore.dogs[dog]
             }
         }
     }
@@ -16,5 +23,6 @@ struct CardsListView: View {
 struct CardsListView_Previews: PreviewProvider {
     static var previews: some View {
         CardsListView()
+            .environmentObject(ViewState())
     }
 }
