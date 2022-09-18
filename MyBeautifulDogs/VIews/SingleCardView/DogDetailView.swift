@@ -6,21 +6,25 @@ struct DogDetailView: View {
     let dog = DogStore()
 
     var body: some View {
-        ZStack {
-            Button(action: { viewState.showAllCards.toggle() }) {
-                Text("Back")
-            }
-            VStack {
-                Image(viewState.selectedDogCard?.dogImage ?? "")
-                Text(viewState.selectedDogCard?.dogBreed ?? "")
+
+        VStack {
+            Image(viewState.selectedDogCard?.dogImage ?? "")
+            Text(viewState.selectedDogCard?.dogBreed ?? "")
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: { withAnimation { viewState.showAllCards = true } }) {
+                    Text("Done")
+                }
             }
         }
     }
+
 }
 
-struct DogDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DogDetailView()
-            .environmentObject(ViewState())
-    }
-}
+        struct DogDetailView_Previews: PreviewProvider {
+            static var previews: some View {
+                DogDetailView()
+                    .environmentObject(ViewState())
+            }
+        }

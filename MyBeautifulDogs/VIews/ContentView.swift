@@ -26,7 +26,11 @@ struct ContentView: View {
             }
         }
         if !viewState.showAllCards {
-            DogDetailView()
+            NavigationView {
+                DogDetailView()
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }
