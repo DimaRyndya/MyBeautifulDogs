@@ -1,7 +1,6 @@
 import SwiftUI
 
 enum BreedName {
-
     case bostonTerrier
     case stBernardPuppy
     case caneCorso
@@ -61,32 +60,6 @@ enum BreedName {
            return  "pomeranian"
         case .frenchBulldog:
            return  "french-bulldog"
-
-        }
-    }
-
-    var dogCounter: Int {
-        switch self {
-        case .bostonTerrier:
-           return  0
-        case .stBernardPuppy:
-           return  0
-        case .caneCorso:
-           return  0
-        case .chowChow:
-           return  0
-        case .border:
-           return  0
-        case .pembrokeWelshCorgi:
-           return  0
-        case .beagle:
-           return  0
-        case .yorkshireTerrier:
-           return  0
-        case .pomeranian:
-           return  0
-        case .frenchBulldog:
-           return  0
 
         }
     }

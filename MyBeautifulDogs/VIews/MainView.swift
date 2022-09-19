@@ -2,8 +2,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var viewState: ViewState
-    
-    let dogStore = DogStore()
+    @EnvironmentObject var dogStore: DogStore
     
     let columns = [
         GridItem(.adaptive(minimum: 120), spacing: 10),
@@ -29,5 +28,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(ViewState())
+            .environmentObject(DogStore())
     }
 }

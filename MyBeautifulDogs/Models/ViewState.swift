@@ -6,7 +6,6 @@ class ViewState: ObservableObject {
 
     convenience init(dog: BreedName) {
         self.init()
-        showAllCards = true
         selectedDogCard = dog
     }
 

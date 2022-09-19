@@ -4,7 +4,6 @@ struct ContentView: View {
     @EnvironmentObject var viewState: ViewState
     @Binding var selectedTab: Int
 
-    let dog = DogStore()
 
     var body: some View {
         if viewState.showAllCards {
@@ -26,7 +25,6 @@ struct ContentView: View {
                         Image(systemName: "suit.heart")
                         Text("My Dogs")
                     }
-                    .tag(3)
             }
         }
         if !viewState.showAllCards {

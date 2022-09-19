@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DogStore {
+class DogStore: ObservableObject {
     let dogs: [BreedName] = [
         BreedName.bostonTerrier,
         BreedName.stBernardPuppy,
@@ -15,17 +15,16 @@ struct DogStore {
 
     ]
 
-}
+    @Published var userDogs: [BreedName] = []
 
-class UserDogs {
-    var userDogs: [BreedName] = []
+    @Published var dogName = ""
 
- func addDog(dogCard: BreedName?) {
+    func addDog(dogCard: BreedName?) {
         if let dogCard = dogCard {
             userDogs.append(dogCard)
         }
-     }
-
+    }
 }
+
 
 
