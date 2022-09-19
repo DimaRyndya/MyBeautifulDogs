@@ -4,13 +4,13 @@ import SwiftUI
 struct MyBeautifulDogsApp: App {
     @StateObject var viewState = ViewState()
     @State private var selectedTab = 1
-    @StateObject var dogStore = DogStore()
+    @StateObject var viewModel = ViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView(selectedTab: $selectedTab)
                 .environmentObject(viewState)
-                .environmentObject(dogStore)
+                .environmentObject(viewModel)
         }
     }
 }

@@ -1,7 +1,9 @@
 import SwiftUI
 
-class DogStore: ObservableObject {
-    let dogs: [BreedName] = [
+///Service layer
+
+struct DogStore {
+    let allDodBreeds: [BreedName] = [
         BreedName.bostonTerrier,
         BreedName.stBernardPuppy,
         BreedName.caneCorso,
@@ -12,18 +14,7 @@ class DogStore: ObservableObject {
         BreedName.yorkshireTerrier,
         BreedName.pomeranian,
         BreedName.frenchBulldog
-
     ]
-
-    @Published var userDogs: [BreedName] = []
-
-    @Published var dogName = ""
-
-    func addDog(dogCard: BreedName?) {
-        if let dogCard = dogCard {
-            userDogs.append(dogCard)
-        }
-    }
 }
 
 

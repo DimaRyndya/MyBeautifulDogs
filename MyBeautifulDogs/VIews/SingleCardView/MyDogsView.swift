@@ -1,16 +1,19 @@
 import SwiftUI
 
 struct MyDogsView: View {
-    @EnvironmentObject var dogStore: DogStore
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
-        List(0..<dogStore.userDogs.count, id: \.self) { selectedDog in
+        List(0..<viewModel.userDogs.count, id: \.self) { selectedDog in
             HStack {
-                Image(dogStore.userDogs[selectedDog].dogImage)
+                Image(viewModel.userDogs[selectedDog].dogImage)
                     .resizable()
                     .scaledToFit()
                     .frame(width: Settings.mainScreenCardSize.width, height: Settings.mainScreenCardSize.height)
-                Text(dogStore.userDogs[selectedDog].dogBreed )
+                VStack {
+                    Text("")
+                    Text(viewModel.userDogs[selectedDog].dogBreed )
+                }
             }
         }
     }
@@ -19,6 +22,6 @@ struct MyDogsView: View {
 struct MyDogsView_Previews: PreviewProvider {
     static var previews: some View {
         MyDogsView()
-            .environmentObject(DogStore())
+            .environmentObject(ViewModel())
     }
 }

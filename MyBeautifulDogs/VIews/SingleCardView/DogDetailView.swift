@@ -2,8 +2,7 @@ import SwiftUI
 
 struct DogDetailView: View {
     @EnvironmentObject var viewState: ViewState
-    @EnvironmentObject var dogStore: DogStore
-
+    @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
         VStack {
@@ -15,8 +14,13 @@ struct DogDetailView: View {
             Text(viewState.selectedDogCard?.dogBreed ?? "")
            // Text("\(dogStore.userDogs[viewState.selectedDogCard].count)")
             Button("Add Dog") {
+                alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
+                    //viewModel.dogName = text
+                } secondaryAction: {
+                }
+
                 let currentDog = viewState.selectedDogCard
-                dogStore.addDog(dogCard: currentDog)
+                viewModel.addDog(dogCard: currentDog)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -36,6 +40,6 @@ struct DogDetailView_Previews: PreviewProvider {
     static var previews: some View {
         DogDetailView()
             .environmentObject(ViewState())
-            .environmentObject(DogStore())
+            .environmentObject(ViewModel())
     }
 }
