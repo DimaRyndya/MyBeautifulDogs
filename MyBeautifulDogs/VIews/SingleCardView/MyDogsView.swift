@@ -6,13 +6,13 @@ struct MyDogsView: View {
     var body: some View {
         List(0..<viewModel.userDogs.count, id: \.self) { selectedDog in
             HStack {
-                Image(viewModel.userDogs[selectedDog].dogImage)
+                Image(viewModel.userDogs[selectedDog].breedName?.dogImage ?? "")
                     .resizable()
                     .scaledToFit()
                     .frame(width: Settings.mainScreenCardSize.width, height: Settings.mainScreenCardSize.height)
                 VStack {
-                    Text("")
-                    Text(viewModel.userDogs[selectedDog].dogBreed )
+                    Text(viewModel.getSavedDogName(for: selectedDog, in: viewModel.userDogs))
+                    Text(viewModel.userDogs[selectedDog].breedName?.dogBreed ?? "" )
                 }
             }
         }
