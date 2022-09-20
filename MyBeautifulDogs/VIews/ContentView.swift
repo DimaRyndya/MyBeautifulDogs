@@ -25,6 +25,7 @@ struct ContentView: View {
                         Image(systemName: "suit.heart")
                         Text("My Dogs")
                     }
+                    .tag(3)
             }
         }
         if !viewState.showAllCards {
@@ -41,5 +42,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(selectedTab: .constant(1))
             .environmentObject(ViewState())
+            .environmentObject(ViewModel())
     }
 }
