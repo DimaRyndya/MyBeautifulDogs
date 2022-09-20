@@ -26,14 +26,12 @@ struct MyDogsView: View {
                     Spacer()
                     VStack {
                         Button(action: {isPresented.toggle() }) {
-                                Image(systemName: "plus")
-                                    .font(.largeTitle)
-                                    .foregroundColor(.black)
-                            }
-                            .padding()
-                            .sheet(isPresented: $isPresented, content: {
-                                DogModalView()
-                        })
+                            Image(systemName: "plus")
+                                .font(.largeTitle)
+                                .foregroundColor(.black)
+                        }
+                        .padding()
+                        .fullScreenCover(isPresented: $isPresented, content: DogModalView.init)
                     }
                 }
             }
