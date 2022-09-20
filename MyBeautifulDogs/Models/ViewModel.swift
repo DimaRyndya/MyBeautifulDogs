@@ -21,4 +21,11 @@ class ViewModel: ObservableObject {
         dogName = userDogs[selectedDog].dogName
         return dogName
     }
+
+    func getUserDogsCount(for selectedCard: BreedName?) -> Int {
+        var counter = 0
+        let filteredUserDogs = userDogs.filter { $0.breedName?.dogBreed == selectedCard?.dogBreed }
+        counter = filteredUserDogs.count
+        return counter
+    }
 }
