@@ -16,7 +16,7 @@ class ViewModel: ObservableObject {
         }
     }
 
-    func getSavedDogName(for selectedDog: Int, in userDogs: [SavedDog]) -> String {
+    func getSavedDogName(for selectedDog: Int) -> String {
         var dogName = ""
         dogName = userDogs[selectedDog].dogName
         return dogName

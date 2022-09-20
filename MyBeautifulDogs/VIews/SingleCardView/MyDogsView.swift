@@ -11,7 +11,7 @@ struct MyDogsView: View {
                     .scaledToFit()
                     .frame(width: Settings.mainScreenCardSize.width, height: Settings.mainScreenCardSize.height)
                 VStack {
-                    Text(viewModel.getSavedDogName(for: selectedDog, in: viewModel.userDogs))
+                    Text(viewModel.getSavedDogName(for: selectedDog))
                     Text(viewModel.userDogs[selectedDog].breedName?.dogBreed ?? "" )
                 }
             }
