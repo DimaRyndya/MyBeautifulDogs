@@ -12,7 +12,11 @@ struct DogDetailView: View {
                 .frame(width: Settings.dogDetailCardSize.width, height: Settings.dogDetailCardSize.height)
                 .cornerRadius(20)
             Text(viewState.selectedDogCard?.dogBreed ?? "")
-            Text("\(viewModel.getUserDogsCount(for: viewState.selectedDogCard))")
+            if viewModel.getUserDogsCount(for: viewState.selectedDogCard) == 0 {
+                Text("")
+            } else {
+                Text("\(viewModel.getUserDogsCount(for: viewState.selectedDogCard))")
+            }
             Button("Add Dog") {
                 alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
                     viewModel.addSavedDog(dogName: text, dogCard: viewState.selectedDogCard)
