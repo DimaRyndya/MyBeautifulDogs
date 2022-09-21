@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum BreedName {
+enum BreedName: Encodable {
     case bostonTerrier
     case stBernardPuppy
     case caneCorso
@@ -63,6 +63,23 @@ enum BreedName {
            return  "french-bulldog"
 
         }
+    }
+
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        dogBreed = try container.decode(String.self, forKey: .dogBreed)
+//        dogImage = try container.decode(String.self, forKey: .dogImage)
+//    }
+//
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(dogBreed, forKey: .dogBreed)
+        try container.encode(dogImage, forKey: .dogImage)
+
+    }
+
+    enum CodingKeys: CodingKey {
+        case dogBreed, dogImage
     }
 }
 

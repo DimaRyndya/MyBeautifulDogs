@@ -11,6 +11,9 @@ struct MyBeautifulDogsApp: App {
             ContentView(selectedTab: $selectedTab)
                 .environmentObject(viewState)
                 .environmentObject(viewModel)
+                .onAppear {
+                  print(FileManager.documentURL ?? "")
+                }
         }
     }
 }
