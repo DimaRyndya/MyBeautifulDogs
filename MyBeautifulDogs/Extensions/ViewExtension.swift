@@ -19,6 +19,7 @@ extension View {
         }))
         rootController().present(alert, animated: true, completion: nil)
     }
+
     func rootController() -> UIViewController {
         guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return .init()
