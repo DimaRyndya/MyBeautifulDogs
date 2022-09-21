@@ -1,6 +1,6 @@
 import SwiftUI
 
-class ViewModel: ObservableObject {
+class ViewModel: ObservableObject, Codable {
 
     let dogStore = DogStore()
     
@@ -15,6 +15,7 @@ class ViewModel: ObservableObject {
             savedDog.breedName = dogCard
             userDogs.append(savedDog)
         }
+        save(dog: dogName)
     }
 
     func getSavedDogName(for selectedDog: Int) -> String {
@@ -28,6 +29,24 @@ class ViewModel: ObservableObject {
         let filteredUserDogs = userDogs.filter { $0.breedName?.dogBreed == selectedCard?.dogBreed }
         counter = filteredUserDogs.count
         return counter
+    }
+
+    func save(dog: String) {
+      do {
+      // 1
+        let encoder = JSONEncoder()
+        // 2
+        let data = try encoder.encode(self)
+        // 3
+        let filename = "\(userDogs[0].dogName).rwcard"
+        if let url = FileManager.documentURL?
+          .appendingPathComponent(filename) {
+          // 4
+          try data.write(to: url)
+        }
+      } catch {
+        print(error.localizedDescription)
+      }
     }
 
 
