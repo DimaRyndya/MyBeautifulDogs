@@ -1,9 +1,12 @@
 import SwiftUI
 
 
-class DogStore {
+class DogStore: Identifiable, Codable {
 
-     let allDogBreeds: [BreedName] = [
+    let id = UUID()
+
+
+    let allDogBreeds: [BreedName] = [
         BreedName.bostonTerrier,
         BreedName.stBernardPuppy,
         BreedName.caneCorso,
@@ -16,7 +19,9 @@ class DogStore {
         BreedName.frenchBulldog
     ]
 
-   private(set) var userDogs: [SavedDog] = []
+    private(set) var userDogs: [SavedDog] = []
+
+    init() { }
 
 
     func addSavedDog(dogName: String, dogCard: BreedName?){
@@ -29,20 +34,26 @@ class DogStore {
     }
 
 
+    required init(from decoder: Decoder) throws {
+        <#code#>
+    }
+    func encode(to encoder: Encoder) throws {
+        <#code#>
+    }
 
-//    func save(dog: String) {
-//      do {
-//        let encoder = JSONEncoder()
-//        let data = try encoder.encode(self)
-//        let filename = "\(dogName).rwcard"
-//        if let url = FileManager.documentURL?
-//          .appendingPathComponent(filename) {
-//          try data.write(to: url)
-//        }
-//      } catch {
-//        print(error.localizedDescription)
-//      }
-//    }
+    func save(dog: String) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(self)
+            let filename = "\(id).rwcard"
+            if let url = FileManager.documentURL?
+                .appendingPathComponent(filename) {
+                try data.write(to: url)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 
 
 
