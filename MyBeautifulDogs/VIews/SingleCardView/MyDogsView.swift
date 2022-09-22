@@ -7,19 +7,18 @@ struct MyDogsView: View {
 
     var body: some View {
         ZStack {
-            List(0..<viewModel.userDogs.count, id: \.self) { selectedDog in
+            List(0..<viewModel.getSavedDogs().count, id: \.self) { selectedDog in
                 HStack {
-                    Image(viewModel.userDogs[selectedDog].breedName?.dogImage ?? "")
+                    Image(viewModel.getSavedDogImage(for: selectedDog))
                         .resizable()
                         .scaledToFit()
                         .frame(width: Settings.mainScreenCardSize.width, height: Settings.mainScreenCardSize.height)
                     VStack {
                         Text(viewModel.getSavedDogName(for: selectedDog))
-                        Text(viewModel.userDogs[selectedDog].breedName?.dogBreed ?? "" )
+                        Text(viewModel.getSavedDogBreed(for: selectedDog))
                     }
                 }
             }
-
             VStack {
                 Spacer()
                 HStack {

@@ -6,7 +6,7 @@ struct SingleCardView: View {
     var index: Int
     
     var body: some View {
-        Image(viewModel.dogStore.allDodBreeds[index].dogImage)
+        Image(viewModel.getAllDogBreedsImage(index: index))
             .resizable()
             .frame(
                 width: Settings.mainScreenCardSize.width,

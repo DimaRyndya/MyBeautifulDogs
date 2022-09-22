@@ -16,14 +16,14 @@ struct DogModalView: View {
                     .padding(.trailing, 15)
                 }
             }
-            List(0..<viewModel.dogStore.allDodBreeds.count, id: \.self) { dog in
+            List(0..<viewModel.getAllDogBreeds().count, id: \.self) { dog in
                 HStack {
                     SingleCardView(index: dog)
                     VStack {
-                        Text(viewModel.dogStore.allDodBreeds[dog].dogBreed)
+                        Text(viewModel.getAllDogBreedsImage(index: dog))
                         Button("Choose Dog") {
                             alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
-                                viewModel.addSavedDog(dogName: text, dogCard: viewModel.dogStore.allDodBreeds[dog])
+                                viewModel.addSavedDog(dogName: text, dogCard: viewModel.getSelectedDogBreedName(dog: dog))
                             } secondaryAction: {
                             }
                         }

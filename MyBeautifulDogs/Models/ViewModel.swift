@@ -1,73 +1,50 @@
 import SwiftUI
 
-class ViewModel: ObservableObject, Codable {
+class ViewModel: ObservableObject {
 
-    let dogStore = DogStore()
-    
-    @Published var userDogs: [SavedDog] = []
-    
-    init() {}
+    private var dogStore = DogStore()
 
-    func addSavedDog(dogName: String, dogCard: BreedName?) {
-        if let dogCard = dogCard {
-            var savedDog = SavedDog()
-            savedDog.dogName = dogName
-            savedDog.breedName = dogCard
-            userDogs.append(savedDog)
-        }
-        save(dog: dogName)
+
+    func getSelectedDogBreedName(dog: Int) -> BreedName {
+        dogStore.allDogBreeds[dog]
+    }
+    func getAllDogBreedsImage(index: Int) -> String {
+        dogStore.allDogBreeds[index].dogImage
     }
 
-    func getSavedDogName(for selectedDog: Int) -> String {
-        var dogName = ""
-        dogName = userDogs[selectedDog].dogName
-        return dogName
+    func getAllDogBreeds() -> [BreedName] {
+        dogStore.allDogBreeds
+    }
+
+    func getSavedDogs() -> [SavedDog] {
+        dogStore.userDogs
     }
 
     func getUserDogsCount(for selectedCard: BreedName?) -> Int {
         var counter = 0
-        let filteredUserDogs = userDogs.filter { $0.breedName?.dogBreed == selectedCard?.dogBreed }
+        let filteredUserDogs = dogStore.userDogs.filter { $0.breedName?.dogBreed == selectedCard?.dogBreed }
         counter = filteredUserDogs.count
         return counter
     }
 
-    func save(dog: String) {
-      do {
-      // 1
-        let encoder = JSONEncoder()
-        // 2
-        let data = try encoder.encode(self)
-        // 3
-        let filename = "\(userDogs[0].dogName).rwcard"
-        if let url = FileManager.documentURL?
-          .appendingPathComponent(filename) {
-          // 4
-          try data.write(to: url)
-        }
-      } catch {
-        print(error.localizedDescription)
-      }
+    func addSavedDog(dogName: String, dogCard: BreedName?){
+        dogStore.addSavedDog(dogName: dogName, dogCard: dogCard)
     }
 
-
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-       // userDogs += try container.decode([String].self, forKey: .dogName)
+    func getSavedDogName(for selectedDog: Int) -> String {
+        let dogName = dogStore.userDogs[selectedDog].dogName
+        return dogName
     }
 
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
+    func getSavedDogImage(for selectedDog: Int) -> String {
 
-        let dogName = userDogs.compactMap { $0.dogName }
-        try container.encode(dogName, forKey: .dogName)
-        let dogBreed = userDogs.compactMap { $0.breedName?.dogBreed }
-        try container.encode(dogBreed, forKey: .dogBreed)
-        let dogImage = userDogs.compactMap { $0.breedName?.dogImage }
-        try container.encode(dogImage, forKey: .dogImage)
+        let dogImage = dogStore.userDogs[selectedDog].breedName?.dogImage ?? ""
+        return dogImage
     }
-
-    enum CodingKeys: CodingKey {
-        case dogName, dogBreed, dogImage
+    
+    func getSavedDogBreed(for selectedDog: Int) -> String {
+        let dogBreed = dogStore.userDogs[selectedDog].breedName?.dogBreed ?? ""
+        return dogBreed
     }
 
 }

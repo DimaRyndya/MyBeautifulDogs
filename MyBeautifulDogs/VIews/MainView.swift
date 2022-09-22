@@ -12,11 +12,11 @@ struct MainView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: columns) {
-                ForEach(0..<viewModel.dogStore.allDodBreeds.count) { dog in
+                ForEach(0..<viewModel.getAllDogBreeds().count) { dog in
                     SingleCardView(index: dog)
                         .onTapGesture {
                             viewState.showAllCards.toggle()
-                            viewState.selectedDogCard = viewModel.dogStore.allDodBreeds[dog]
+                            viewState.selectedDogCard = viewModel.getSelectedDogBreedName(dog: dog)
                         }
                 }
             }

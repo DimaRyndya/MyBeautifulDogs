@@ -16,6 +16,7 @@ extension SavedDog: Codable {
        dogName = try container.decode(String.self, forKey: .dogName)
        // breedName += try container.decode(String.self, forKey: .dogBreed)
     }
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(dogName, forKey: .dogName)
