@@ -5,18 +5,17 @@ class DogStore: Identifiable, Codable {
 
     var id = UUID()
 
-
     var allDogBreeds: [BreedName] = [
-        BreedName.bostonTerrier(""),
-        BreedName.stBernardPuppy(""),
-        BreedName.caneCorso(""),
-        BreedName.chowChow(""),
-        BreedName.border(""),
-        BreedName.pembrokeWelshCorgi(""),
-        BreedName.beagle(""),
-        BreedName.yorkshireTerrier(""),
-        BreedName.pomeranian(""),
-        BreedName.frenchBulldog("")
+        BreedName.bostonTerrier,
+        BreedName.stBernardPuppy,
+        BreedName.caneCorso,
+        BreedName.chowChow,
+        BreedName.border,
+        BreedName.pembrokeWelshCorgi,
+        BreedName.beagle,
+        BreedName.yorkshireTerrier,
+        BreedName.pomeranian,
+        BreedName.frenchBulldog
     ]
 
     private(set) var userDogs: [SavedDog] = []
@@ -39,13 +38,13 @@ class DogStore: Identifiable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(String.self, forKey: .id)
         self.id = UUID(uuidString: id) ?? UUID()
-        allDogBreeds = try container.decode([BreedName].self, forKey: .breedName)
+        userDogs = try container.decode([SavedDog].self, forKey: .breedName)
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-        try container.encode(allDogBreeds, forKey: .breedName)
+        try container.encode(userDogs, forKey: .breedName)
     }
 
     func save() {

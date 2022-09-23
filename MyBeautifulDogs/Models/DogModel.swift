@@ -12,17 +12,27 @@ enum BreedName: Codable {
 //    case pomeranian = "Pomeranian"
 //    case frenchBulldog = "French Bulldog"
 
-    case bostonTerrier(String)
-    case stBernardPuppy(String)
-    case caneCorso(String)
-    case chowChow(String)
-    case border(String)
-    case pembrokeWelshCorgi(String)
-    case beagle(String)
-    case yorkshireTerrier(String)
-    case pomeranian(String)
-    case frenchBulldog(String)
+//    case bostonTerrier(String)
+//    case stBernardPuppy(String)
+//    case caneCorso(String)
+//    case chowChow(String)
+//    case border(String)
+//    case pembrokeWelshCorgi(String)
+//    case beagle(String)
+//    case yorkshireTerrier(String)
+//    case pomeranian(String)
+//    case frenchBulldog(String)
 
+    case bostonTerrier
+    case stBernardPuppy
+    case caneCorso
+    case chowChow
+    case border
+    case pembrokeWelshCorgi
+    case beagle
+    case yorkshireTerrier
+    case pomeranian
+    case frenchBulldog
 
     var dogBreed: String {
         switch self {
@@ -83,36 +93,56 @@ enum BreedName: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let breedName = try container.decode(String.self, forKey: .breedName)
         switch breedName {
+//        case "Boston Terrier":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .bostonTerrier(breed)
+//        case "St Bernard Puppy":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .stBernardPuppy(breed)
+//        case "Cane Corso":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .caneCorso(breed)
+//        case "Chow Chow":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .chowChow(breed)
+//        case "Border":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .border(breed)
+//        case "Pembroke WelshCorgi":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .pembrokeWelshCorgi(breed)
+//        case "Beagle":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .beagle(breed)
+//        case "Yorkshire Terrier":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .yorkshireTerrier(breed)
+//        case "Pomeranian":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .pomeranian(breed)
+//        case "French Bulldog":
+//            let breed = try container.decode(String.self, forKey: .breedName)
+//            self = .frenchBulldog(breed)
         case "Boston Terrier":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .bostonTerrier(breed)
+            self = .bostonTerrier
         case "St Bernard Puppy":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .stBernardPuppy(breed)
+            self = .stBernardPuppy
         case "Cane Corso":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .caneCorso(breed)
+            self = .caneCorso
         case "Chow Chow":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .chowChow(breed)
+            self = .chowChow
         case "Border":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .border(breed)
+            self = .border
         case "Pembroke WelshCorgi":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .pembrokeWelshCorgi(breed)
+            self = .pembrokeWelshCorgi
         case "Beagle":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .beagle(breed)
+            self = .beagle
         case "Yorkshire Terrier":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .yorkshireTerrier(breed)
+            self = .yorkshireTerrier
         case "Pomeranian":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .pomeranian(breed)
+            self = .pomeranian
         case "French Bulldog":
-            let breed = try container.decode(String.self, forKey: .breedName)
-            self = .frenchBulldog(breed)
+            self = .frenchBulldog
         default:
             throw CodingError.unknownValue
         }

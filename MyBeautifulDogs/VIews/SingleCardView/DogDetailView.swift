@@ -3,8 +3,6 @@ import SwiftUI
 struct DogDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var viewModel: ViewModel
-    @State private var isPresented = false
-    @State private var text = ""
 
     var body: some View {
         VStack {
