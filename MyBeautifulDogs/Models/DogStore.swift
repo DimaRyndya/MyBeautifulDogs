@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-class DogStore: Identifiable, Codable {
+class DogStore: Codable {
 
     var id = UUID()
 
@@ -22,35 +22,6 @@ class DogStore: Identifiable, Codable {
 
     init() {}
 
-
-    func addSavedDog(dogName: String, dogCard: BreedName?){
-        var savedDog = SavedDog()
-        if let dogCard = dogCard {
-            savedDog.dogName = dogName
-            savedDog.breedName = dogCard
-        }
-        userDogs.append(savedDog)
-        save()
-    }
-
-
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        let id = try container.decode(String.self, forKey: .id)
-        self.id = UUID(uuidString: id) ?? UUID()
-        userDogs += try container.decode([SavedDog].self, forKey: .dogName)
-        userDogs += try container.decode([SavedDog].self, forKey: .breedName)
-    }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
-        let dogName = userDogs.compactMap { $0.dogName as String }
-        try container.encode(dogName, forKey: .dogName)
-        let breedName = userDogs.compactMap{ $0.breedName as BreedName? }
-        try container.encode(breedName, forKey: .breedName)
-    }
-
     func save() {
         do {
             let encoder = JSONEncoder()
@@ -65,8 +36,42 @@ class DogStore: Identifiable, Codable {
         }
     }
 
+
+    func addSavedDog(dogName: String, dogCard: BreedName?){
+        var savedDog = SavedDog()
+        if let dogCard = dogCard {
+            savedDog.dogName = dogName
+            savedDog.breedName = dogCard
+        }
+        userDogs.append(savedDog)
+        save()
+    }
+
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let savedDog = try container.decode(SavedDog.self, forKey: .savedDogs)
+        userDogs.append(savedDog)
+        let id = try container.decode(String.self, forKey: .id)
+        self.id = UUID(uuidString: id) ?? UUID()
+//        userDogs += try container.decode([SavedDog].self, forKey: .dogName)
+//        userDogs += try container.decode([SavedDog].self, forKey: .breedName)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(id, forKey: .id)
+        try container.encode(userDogs, forKey: .savedDogs)
+//        let dogName = userDogs.compactMap { $0.dogName as String }
+//        try container.encode(dogName, forKey: .dogName)
+//        let breedName = userDogs.compactMap{ $0.breedName as BreedName? }
+//        try container.encode(breedName, forKey: .breedName)
+    }
+
     enum CodingKeys: CodingKey {
-        case id, dogName, breedName
+        case savedDogs, id
+//        case id, dogName, breedName
     }
 
 }
