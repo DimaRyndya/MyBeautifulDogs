@@ -3,25 +3,25 @@ import SwiftUI
 
 class DogStore: Identifiable, Codable {
 
-    let id = UUID()
+    var id = UUID()
 
 
-    let allDogBreeds: [BreedName] = [
-        BreedName.bostonTerrier,
-        BreedName.stBernardPuppy,
-        BreedName.caneCorso,
-        BreedName.chowChow,
-        BreedName.border,
-        BreedName.pembrokeWelshCorgi,
-        BreedName.beagle,
-        BreedName.yorkshireTerrier,
-        BreedName.pomeranian,
-        BreedName.frenchBulldog
+    var allDogBreeds: [BreedName] = [
+        BreedName.bostonTerrier(""),
+        BreedName.stBernardPuppy(""),
+        BreedName.caneCorso(""),
+        BreedName.chowChow(""),
+        BreedName.border(""),
+        BreedName.pembrokeWelshCorgi(""),
+        BreedName.beagle(""),
+        BreedName.yorkshireTerrier(""),
+        BreedName.pomeranian(""),
+        BreedName.frenchBulldog("")
     ]
 
     private(set) var userDogs: [SavedDog] = []
 
-    init() { }
+    init() {}
 
 
     func addSavedDog(dogName: String, dogCard: BreedName?){
@@ -31,17 +31,24 @@ class DogStore: Identifiable, Codable {
             savedDog.breedName = dogCard
         }
         userDogs.append(savedDog)
+        save()
     }
 
 
     required init(from decoder: Decoder) throws {
-        <#code#>
-    }
-    func encode(to encoder: Encoder) throws {
-        <#code#>
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let id = try container.decode(String.self, forKey: .id)
+        self.id = UUID(uuidString: id) ?? UUID()
+        allDogBreeds = try container.decode([BreedName].self, forKey: .breedName)
     }
 
-    func save(dog: String) {
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(allDogBreeds, forKey: .breedName)
+    }
+
+    func save() {
         do {
             let encoder = JSONEncoder()
             let data = try encoder.encode(self)
@@ -55,7 +62,9 @@ class DogStore: Identifiable, Codable {
         }
     }
 
-
+    enum CodingKeys: CodingKey {
+        case id, breedName
+    }
 
 }
 

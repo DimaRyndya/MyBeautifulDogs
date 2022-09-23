@@ -13,8 +13,8 @@ extension SavedDog: Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-       dogName = try container.decode(String.self, forKey: .dogName)
-       // breedName += try container.decode(String.self, forKey: .dogBreed)
+        dogName = try container.decode(String.self, forKey: .dogName)
+        breedName = try container.decode(BreedName.self, forKey: .breedName)
     }
     
     func encode(to encoder: Encoder) throws {
