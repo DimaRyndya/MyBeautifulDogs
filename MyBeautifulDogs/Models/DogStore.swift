@@ -38,13 +38,17 @@ class DogStore: Identifiable, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(String.self, forKey: .id)
         self.id = UUID(uuidString: id) ?? UUID()
-        userDogs = try container.decode([SavedDog].self, forKey: .breedName)
+        userDogs += try container.decode([SavedDog].self, forKey: .dogName)
+        userDogs += try container.decode([SavedDog].self, forKey: .breedName)
     }
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
-        try container.encode(userDogs, forKey: .breedName)
+        let dogName = userDogs.compactMap { $0.dogName as String }
+        try container.encode(dogName, forKey: .dogName)
+        let breedName = userDogs.compactMap{ $0.breedName as BreedName? }
+        try container.encode(breedName, forKey: .breedName)
     }
 
     func save() {
@@ -62,7 +66,7 @@ class DogStore: Identifiable, Codable {
     }
 
     enum CodingKeys: CodingKey {
-        case id, breedName
+        case id, dogName, breedName
     }
 
 }
