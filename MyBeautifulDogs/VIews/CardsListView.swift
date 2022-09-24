@@ -5,15 +5,15 @@ struct CardsListView: View {
     @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
-        List(0..<viewModel.getAllDogBreeds().count, id: \.self) { dog in
+        List(0..<viewModel.getAllDogBreeds().count, id: \.self) { index in
             HStack {
-                SingleCardView(index: dog)
-                Text(viewModel.getSavedDogBreed(for: dog))
-                
+                SingleCardView(index: index)
+                Text(viewModel.getAllDogBreeds()[index].dogBreed)
+
             }
             .onTapGesture {
                 viewState.showAllCards.toggle()
-                viewState.selectedDogCard = viewModel.getSelectedDogBreedName(dog: dog)
+                viewState.selectedDogCard = viewModel.getSelectedDogBreedName(dog: index)
             }
         }
     }

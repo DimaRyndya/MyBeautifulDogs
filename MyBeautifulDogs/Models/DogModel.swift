@@ -1,5 +1,3 @@
-import SwiftUI
-
 enum BreedName: Codable {
 //    case bostonTerrier = "Boston Terrier"
 //    case stBernardPuppy = "St Bernard Puppy"
@@ -89,7 +87,7 @@ enum BreedName: Codable {
         case unknownValue
     }
 
-    init(from decoder: Decoder) throws {
+init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let breedName = try container.decode(String.self, forKey: .breedName)
         switch breedName {
@@ -150,33 +148,10 @@ enum BreedName: Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        switch self {
-        case .bostonTerrier:
-            try container.encode("Boston Terrier", forKey: .breedName)
-        case .stBernardPuppy:
-            try container.encode("St Bernard Puppy", forKey: .breedName)
-        case .caneCorso:
-            try container.encode("Cane Corso", forKey: .breedName)
-        case .chowChow:
-            try container.encode("Chow Chow", forKey: .breedName)
-        case .border:
-            try container.encode("Border", forKey: .breedName)
-        case .pembrokeWelshCorgi:
-            try container.encode("Pembroke WelshCorgi", forKey: .breedName)
-        case .beagle:
-            try container.encode("Beagle", forKey: .breedName)
-        case .yorkshireTerrier:
-            try container.encode("Yorkshire Terrier", forKey: .breedName)
-        case .pomeranian:
-            try container.encode("Pomeranian", forKey: .breedName)
-        case .frenchBulldog:
-            try container.encode("French Bulldog", forKey: .breedName)
-        }
+        try container.encode(self.dogBreed, forKey: .breedName)
     }
 
     enum CodingKeys: CodingKey {
         case breedName
     }
 }
-
-
