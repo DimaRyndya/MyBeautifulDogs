@@ -23,7 +23,7 @@ struct DogModalView: View {
                         Text(viewModel.getAllDogBreedsImage(index: dog))
                         Button("Choose Dog") {
                             alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
-                                viewModel.addSavedDog(dogName: text, dogCard: viewModel.getSelectedDogBreedName(dog: dog))
+                             viewModel.addSavedDog(dogName: text, dogCard: viewModel.getSelectedDogBreedName(dog: dog))
                             } secondaryAction: {
                             }
                         }

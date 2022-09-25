@@ -15,6 +15,7 @@ struct DogDetailView: View {
             if viewModel.getUserDogsCount(for: viewState.selectedDogCard) == 0 {
                 Text("")
             } else {
+                
                 Text("\(viewModel.getUserDogsCount(for: viewState.selectedDogCard))")
             }
             Button("Add Dog") {

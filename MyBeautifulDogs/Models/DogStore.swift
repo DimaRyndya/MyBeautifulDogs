@@ -55,16 +55,23 @@ class DogStore: Codable {
     }
 
 
-    func addSavedDog(dogName: String, dogCard: BreedName?){
+    func addSavedDog(dogName: String, dogCard: BreedName?) throws {
         var savedDog = SavedDog()
         if let dogCard = dogCard {
             savedDog.dogName = dogName
             savedDog.breedName = dogCard
         }
-        userDogs.append(savedDog)
-        save()
-    }
+        let filteredUserDogs = userDogs.filter { $0.dogName == savedDog.dogName && $0.breedName?.dogBreed == savedDog.breedName?.dogBreed}
 
+        if filteredUserDogs.isEmpty {
+            userDogs.append(savedDog)
+            save()
+        }
+        else {
+            throw DogError.dogAlreadyExists
+        }
+
+    }
 
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)

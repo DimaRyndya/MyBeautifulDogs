@@ -27,9 +27,17 @@ class ViewModel: ObservableObject {
         return counter
     }
 
-    func addSavedDog(dogName: String, dogCard: BreedName?){
-        dogStore.addSavedDog(dogName: dogName, dogCard: dogCard)
+    func addSavedDog(dogName: String, dogCard: BreedName?) {
+        do {
+            try dogStore.addSavedDog(dogName: dogName, dogCard: dogCard) }
+        catch DogError.dogAlreadyExists {
+            print("Dog Already exists")
+            return
+        } catch {
     }
+        objectWillChange.send()
+    }
+
 
     func getSavedDogName(for selectedDog: Int) -> String {
         let dogName = dogStore.userDogs[selectedDog].dogName
