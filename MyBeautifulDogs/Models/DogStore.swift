@@ -54,6 +54,18 @@ class DogStore: Codable {
         return nil
     }
 
+    func isDogExists(dog: SavedDog) -> Bool {
+        var isExists = false
+
+        let filteredUserDogs = userDogs.filter { $0.dogName == dog.dogName && $0.breedName?.dogBreed == dog.breedName?.dogBreed}
+
+        if filteredUserDogs.isEmpty {
+            isExists = false
+        } else {
+            isExists = true
+        }
+        return isExists
+    }
 
     func addSavedDog(dogName: String, dogCard: BreedName?) throws {
         var savedDog = SavedDog()
@@ -61,16 +73,13 @@ class DogStore: Codable {
             savedDog.dogName = dogName
             savedDog.breedName = dogCard
         }
-        let filteredUserDogs = userDogs.filter { $0.dogName == savedDog.dogName && $0.breedName?.dogBreed == savedDog.breedName?.dogBreed}
-
-        if filteredUserDogs.isEmpty {
+        if !isDogExists(dog: savedDog) {
             userDogs.append(savedDog)
             save()
         }
         else {
             throw DogError.dogAlreadyExists
         }
-
     }
 
     required init(from decoder: Decoder) throws {
