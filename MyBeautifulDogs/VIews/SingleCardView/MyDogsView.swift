@@ -23,14 +23,15 @@ struct MyDogsView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    VStack {
-                        Button(action: {isPresented.toggle() }) {
-                            Image(systemName: "plus")
-                                .font(.largeTitle)
-                                .foregroundColor(.black)
+                    NavigationView {
+                        VStack {
+                            NavigationLink(destination: DogModalView()) {
+                                Image(systemName: "plus")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.black)
+                                    .padding()
+                            }
                         }
-                        .padding()
-                        .fullScreenCover(isPresented: $isPresented, content: DogModalView.init)
                     }
                 }
             }

@@ -9,7 +9,6 @@ struct CardsListView: View {
             HStack {
                 SingleCardView(index: index)
                 Text(viewModel.getAllDogBreeds()[index].dogBreed)
-
             }
             .onTapGesture {
                 viewState.showAllCards.toggle()
