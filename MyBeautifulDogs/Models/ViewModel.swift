@@ -8,6 +8,12 @@ class ViewModel: ObservableObject {
     func getSelectedDogBreedName(dog: Int) -> BreedName {
         dogStore.allDogBreeds[dog]
     }
+
+    func getSelectedDogBreed(dog: Int) -> String {
+        let breed = dogStore.allDogBreeds[dog].dogBreed
+        return breed
+    }
+
     func getAllDogBreedsImage(index: Int) -> String {
         dogStore.allDogBreeds[index].dogImage
     }

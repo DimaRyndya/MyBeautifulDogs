@@ -5,12 +5,11 @@ struct DogModalView: View {
     @EnvironmentObject var viewState: ViewState
 
     var body: some View {
-
         List(0..<viewModel.getAllDogBreeds().count, id: \.self) { dog in
             HStack {
                 SingleCardView(index: dog)
                 VStack {
-                    Text(viewModel.getAllDogBreedsImage(index: dog))
+                    Text(viewModel.getSelectedDogBreed(dog: dog))
                     Button("Choose Dog") {
                         alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
                             viewModel.addSavedDog(dogName: text, dogCard: viewModel.getSelectedDogBreedName(dog: dog))
@@ -21,9 +20,9 @@ struct DogModalView: View {
                     .foregroundColor(.blue)
                     .padding()
                 }
-
             }
         }
+        .navigationBarTitle("Dogs List")
     }
 }
         struct DogModalView_Previews: PreviewProvider {

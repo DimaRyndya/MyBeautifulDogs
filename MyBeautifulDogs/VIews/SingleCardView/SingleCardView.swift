@@ -12,6 +12,7 @@ struct SingleCardView: View {
                 width: Settings.mainScreenCardSize.width,
                 height: Settings.mainScreenCardSize.height)
             .cornerRadius(20)
+            .scaledToFit()
     }
     
 }
