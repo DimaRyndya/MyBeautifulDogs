@@ -3,8 +3,8 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var viewState: ViewState
     @Binding var selectedTab: Int
-
-
+    
+    
     var body: some View {
         if viewState.showAllCards {
             TabView(selection: $selectedTab) {

@@ -3,7 +3,7 @@ import SwiftUI
 struct DogModalView: View {
     @EnvironmentObject var viewModel: ViewModel
     @EnvironmentObject var viewState: ViewState
-
+    
     var body: some View {
         List(0..<viewModel.getAllDogBreeds().count, id: \.self) { dog in
             HStack {
@@ -25,10 +25,10 @@ struct DogModalView: View {
         .navigationBarTitle("Dogs List")
     }
 }
-        struct DogModalView_Previews: PreviewProvider {
-            static var previews: some View {
-                DogModalView()
-                    .environmentObject(ViewState())
-                    .environmentObject(ViewModel())
-            }
-        }
+struct DogModalView_Previews: PreviewProvider {
+    static var previews: some View {
+        DogModalView()
+            .environmentObject(ViewState())
+            .environmentObject(ViewModel())
+    }
+}

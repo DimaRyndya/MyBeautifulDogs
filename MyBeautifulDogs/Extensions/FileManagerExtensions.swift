@@ -1,9 +1,9 @@
 import SwiftUI
 
 extension FileManager {
-  static var documentURL: URL? {
-    return Self.default.urls(
-      for: .documentDirectory,
-      in: .userDomainMask).first
-  }
+    static var documentURL: URL? {
+        return Self.default.urls(
+            for: .documentDirectory,
+               in: .userDomainMask).first
+    }
 }

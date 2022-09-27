@@ -3,7 +3,7 @@ import SwiftUI
 struct CardsListView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var viewModel: ViewModel
-
+    
     var body: some View {
         List(0..<viewModel.getAllDogBreeds().count, id: \.self) { index in
             HStack {

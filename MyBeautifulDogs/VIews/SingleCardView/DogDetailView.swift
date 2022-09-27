@@ -3,7 +3,7 @@ import SwiftUI
 struct DogDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var viewModel: ViewModel
-
+    
     var body: some View {
         VStack {
             Image(viewState.selectedDogCard?.dogImage ?? "")

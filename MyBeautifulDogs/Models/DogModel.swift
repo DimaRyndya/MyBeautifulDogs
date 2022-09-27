@@ -1,5 +1,5 @@
 enum BreedName: Codable {
-
+    
     case bostonTerrier
     case stBernardPuppy
     case caneCorso
@@ -10,63 +10,63 @@ enum BreedName: Codable {
     case yorkshireTerrier
     case pomeranian
     case frenchBulldog
-
+    
     var dogBreed: String {
         switch self {
         case .bostonTerrier:
-           return  "Boston Terrier"
+            return  "Boston Terrier"
         case .stBernardPuppy:
-           return  "St Bernard Puppy"
+            return  "St Bernard Puppy"
         case .caneCorso:
-           return  "Cane Corso"
+            return  "Cane Corso"
         case .chowChow:
-           return  "Chow Chow"
+            return  "Chow Chow"
         case .border:
-           return  "Border"
+            return  "Border"
         case .pembrokeWelshCorgi:
-           return  "Pembroke WelshCorgi"
+            return  "Pembroke WelshCorgi"
         case .beagle:
-           return  "Beagle"
+            return  "Beagle"
         case .yorkshireTerrier:
-           return  "Yorkshire Terrier"
+            return  "Yorkshire Terrier"
         case .pomeranian:
-           return  "Pomeranian"
+            return  "Pomeranian"
         case .frenchBulldog:
-           return  "French Bulldog"
-
+            return  "French Bulldog"
+            
         }
     }
-
+    
     var dogImage: String {
         switch self {
         case .bostonTerrier:
-           return  "boston-terrier"
+            return  "boston-terrier"
         case .stBernardPuppy:
-           return  "st-bernard-puppy"
+            return  "st-bernard-puppy"
         case .caneCorso:
-           return  "cane-corso"
+            return  "cane-corso"
         case .chowChow:
-           return  "chowchow"
+            return  "chowchow"
         case .border:
-           return  "border-collie"
+            return  "border-collie"
         case .pembrokeWelshCorgi:
-           return  "pembroke-welsh-corgi"
+            return  "pembroke-welsh-corgi"
         case .beagle:
-           return  "beagle"
+            return  "beagle"
         case .yorkshireTerrier:
-           return  "yorkshire-terrier"
+            return  "yorkshire-terrier"
         case .pomeranian:
-           return  "pomeranian"
+            return  "pomeranian"
         case .frenchBulldog:
-           return  "french-bulldog"
-
+            return  "french-bulldog"
+            
         }
     }
     enum CodingError: Error {
         case unknownValue
     }
-
-init(from decoder: Decoder) throws {
+    
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let breedName = try container.decode(String.self, forKey: .breedName)
         switch breedName {
@@ -94,12 +94,12 @@ init(from decoder: Decoder) throws {
             throw CodingError.unknownValue
         }
     }
-
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.dogBreed, forKey: .breedName)
     }
-
+    
     enum CodingKeys: CodingKey {
         case breedName
     }
