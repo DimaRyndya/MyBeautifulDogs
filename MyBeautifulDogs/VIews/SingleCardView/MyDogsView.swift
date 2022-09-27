@@ -5,30 +5,38 @@ struct MyDogsView: View {
     @State private var isPresented = false
 
     var body: some View {
-        ZStack {
-            List(0..<viewModel.getSavedDogs().count, id: \.self) { selectedDog in
-                HStack {
-                    Image(viewModel.getSavedDogImage(for: selectedDog))
-                        .resizable()
-                        .cornerRadius(20)
-                        .scaledToFit()
-                        .frame(width: Settings.mainScreenCardSize.width, height: Settings.mainScreenCardSize.height)
 
-                    VStack {
-                        Text(viewModel.getSavedDogName(for: selectedDog))
-                        Text(viewModel.getSavedDogBreed(for: selectedDog))
+
+        NavigationView {
+            ZStack {
+                List(0..<viewModel.getSavedDogs().count, id: \.self) { selectedDog in
+                    HStack {
+                        Image(viewModel.getSavedDogImage(for: selectedDog))
+                            .resizable()
+                            .cornerRadius(20)
+                            .scaledToFit()
+                            .frame(width: Settings.mainScreenCardSize.width, height: Settings.mainScreenCardSize.height)
+
+                        VStack {
+                            Text(viewModel.getSavedDogName(for: selectedDog))
+                            Text(viewModel.getSavedDogBreed(for: selectedDog))
+                        }
                     }
                 }
-            }
-            NavigationView {
-                NavigationLink(destination: DogModalView()) {
-                    Image(systemName: "plus")
-                        .font(.largeTitle)
-                        .foregroundColor(.blue)
-                        .padding()
+                VStack {
+                    Spacer()
+                    NavigationLink(destination: DogModalView()) {
+                        Spacer()
+                        Image(systemName: "plus")
+                            .font(.largeTitle)
+                            .foregroundColor(.blue)
+                            .padding()
 
+                    }
+                    .navigationBarTitle("My Dogs")
                 }
             }
+
         }
     }
 }
