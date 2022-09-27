@@ -51,7 +51,6 @@ class ViewModel: ObservableObject {
     }
     
     func getSavedDogImage(for selectedDog: Int) -> String {
-        
         let dogImage = dogStore.userDogs[selectedDog].breedName?.dogImage ?? ""
         return dogImage
     }

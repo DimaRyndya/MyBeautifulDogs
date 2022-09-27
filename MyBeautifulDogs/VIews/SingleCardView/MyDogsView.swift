@@ -11,7 +11,13 @@ struct MyDogsView: View {
             ZStack {
                 List(0..<viewModel.getSavedDogs().count, id: \.self) { selectedDog in
                     HStack {
-                        SingleCardView(index: selectedDog)
+                        Image(viewModel.getSavedDogImage(for: selectedDog))
+                            .resizable()
+                            .frame(
+                                width: Settings.mainScreenCardSize.width,
+                                height: Settings.mainScreenCardSize.height)
+                            .cornerRadius(20)
+                            .scaledToFit()
                         VStack {
                             Text(viewModel.getSavedDogName(for: selectedDog))
                             Text(viewModel.getSavedDogBreed(for: selectedDog))

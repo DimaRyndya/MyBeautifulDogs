@@ -110,7 +110,6 @@
 				1D1664C128D3B02300951CD8 /* ContentView.swift */,
 				1D1664CF28D3B18200951CD8 /* MainView.swift */,
 				1D1664DE28D4D37E00951CD8 /* CardsListView.swift */,
-				1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -142,6 +141,7 @@
 				1D1664DC28D4A5CF00951CD8 /* SingleCardView.swift */,
 				1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */,
 				1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */,
+				1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */,
 			);
 			path = SingleCardView;
 			sourceTree = "<group>";

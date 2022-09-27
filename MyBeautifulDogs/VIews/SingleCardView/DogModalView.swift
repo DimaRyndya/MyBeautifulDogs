@@ -2,7 +2,6 @@ import SwiftUI
 
 struct DogModalView: View {
     @EnvironmentObject var viewModel: ViewModel
-    @EnvironmentObject var viewState: ViewState
     
     var body: some View {
         List(0..<viewModel.getAllDogBreeds().count, id: \.self) { dog in
@@ -12,7 +11,9 @@ struct DogModalView: View {
                     Text(viewModel.getSelectedDogBreed(dog: dog))
                     Button("Choose Dog") {
                         alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
-                            viewModel.addSavedDog(dogName: text, dogCard: viewModel.getSelectedDogBreedName(dog: dog))
+                            viewModel.addSavedDog(
+                                dogName: text,
+                                dogCard: viewModel.getSelectedDogBreedName(dog: dog))
                         } secondaryAction: {
                         }
                     }
@@ -28,7 +29,6 @@ struct DogModalView: View {
 struct DogModalView_Previews: PreviewProvider {
     static var previews: some View {
         DogModalView()
-            .environmentObject(ViewState())
             .environmentObject(ViewModel())
     }
 }
