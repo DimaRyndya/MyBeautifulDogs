@@ -26,15 +26,18 @@ struct MyDogsView: View {
                 }
                 VStack {
                     Spacer()
-                    NavigationLink(destination: DogModalView()) {
-                        Image(systemName: "plus")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                            .padding()
-                        
+                    HStack {
+                      Spacer()
+                        NavigationLink(destination: DogModalView()) {
+                            Image(systemName: "plus")
+                                .font(.largeTitle)
+                                .foregroundColor(.blue)
+                                .padding()
+
+                        }
+                        .navigationBarTitle("My Dogs")
+                        .padding()
                     }
-                    .navigationBarTitle("My Dogs")
-                    .frame(width: 30)
                 }
             }
             
