@@ -27,7 +27,6 @@ struct MyDogsView: View {
                 VStack {
                     Spacer()
                     NavigationLink(destination: DogModalView()) {
-                        Spacer()
                         Image(systemName: "plus")
                             .font(.largeTitle)
                             .foregroundColor(.blue)
@@ -35,6 +34,7 @@ struct MyDogsView: View {
                         
                     }
                     .navigationBarTitle("My Dogs")
+                    .frame(width: 30)
                 }
             }
             

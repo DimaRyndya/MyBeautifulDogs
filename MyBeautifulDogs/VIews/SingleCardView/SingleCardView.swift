@@ -8,11 +8,12 @@ struct SingleCardView: View {
     var body: some View {
         Image(viewModel.getAllDogBreedsImage(index: index))
             .resizable()
+            .aspectRatio(contentMode: .fill)
             .frame(
                 width: Settings.mainScreenCardSize.width,
                 height: Settings.mainScreenCardSize.height)
             .cornerRadius(20)
-            .scaledToFit()
+
     }
     
 }
