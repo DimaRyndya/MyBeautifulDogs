@@ -7,25 +7,27 @@ struct ContentView: View {
     
     var body: some View {
         if viewState.showAllCards {
-            TabView(selection: $selectedTab) {
-                MainView()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Dogs Cards")
-                    }
-                    .tag(1)
-                CardsListView()
-                    .tabItem {
-                        Image(systemName: "list.bullet")
-                        Text("Dogs List")
-                    }
-                    .tag(2)
-                MyDogsView()
-                    .tabItem {
-                        Image(systemName: "suit.heart")
-                        Text("My Dogs")
-                    }
-                    .tag(3)
+            HStack(alignment: .top) {
+                TabView(selection: $selectedTab) {
+                    MainView()
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Dogs Cards")
+                        }
+                        .tag(1)
+                    CardsListView()
+                        .tabItem {
+                            Image(systemName: "list.bullet")
+                            Text("Dogs List")
+                        }
+                        .tag(2)
+                    MyDogsView()
+                        .tabItem {
+                            Image(systemName: "suit.heart")
+                            Text("My Dogs")
+                        }
+                        .tag(3)
+                }
             }
         }
         if !viewState.showAllCards {
