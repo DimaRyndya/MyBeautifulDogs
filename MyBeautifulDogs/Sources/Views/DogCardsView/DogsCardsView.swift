@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MainView: View {
+struct DogsCardsView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var viewModel: ViewModel
     
@@ -26,7 +26,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        DogsCardsView()
             .environmentObject(ViewState())
             .environmentObject(ViewModel())
     }

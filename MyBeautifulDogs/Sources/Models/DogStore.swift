@@ -1,7 +1,6 @@
 import SwiftUI
 
 class DogStore: Codable {
-    
     var allDogBreeds: [BreedName] = [
         BreedName.bostonTerrier,
         BreedName.stBernardPuppy,
@@ -55,16 +54,8 @@ class DogStore: Codable {
     }
     
     func isDogExists(dog: SavedDog) -> Bool {
-        var isExists = false
-        
         let filteredUserDogs = userDogs.filter { $0.dogName == dog.dogName && $0.breedName?.dogBreed == dog.breedName?.dogBreed}
-        
-        if filteredUserDogs.isEmpty {
-            isExists = false
-        } else {
-            isExists = true
-        }
-        return isExists
+        return filteredUserDogs.isEmpty
     }
     
     func addSavedDog(dogName: String, dogCard: BreedName?) throws {
@@ -81,18 +72,22 @@ class DogStore: Codable {
             throw DogError.dogAlreadyExists
         }
     }
-    
+
+    //MARK: Encoding and Decoding DogSctore date
+
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         userDogs = try container.decode([SavedDog].self, forKey: .savedDogs)
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(userDogs, forKey: .savedDogs)
     }
-    
+
     enum CodingKeys: CodingKey {
         case savedDogs
     }
+
 }
+

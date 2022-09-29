@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1D1664C028D3B02300951CD8 /* MyBeautifulDogsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664BF28D3B02300951CD8 /* MyBeautifulDogsApp.swift */; };
-		1D1664C228D3B02300951CD8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664C128D3B02300951CD8 /* ContentView.swift */; };
+		1D1664C228D3B02300951CD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664C128D3B02300951CD8 /* MainView.swift */; };
 		1D1664C428D3B02500951CD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1664C328D3B02500951CD8 /* Assets.xcassets */; };
 		1D1664C728D3B02500951CD8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1664C628D3B02500951CD8 /* Preview Assets.xcassets */; };
-		1D1664D028D3B18200951CD8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664CF28D3B18200951CD8 /* MainView.swift */; };
+		1D1664D028D3B18200951CD8 /* DogsCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664CF28D3B18200951CD8 /* DogsCardsView.swift */; };
 		1D1664D228D3B1AD00951CD8 /* DogDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */; };
 		1D1664D428D3B1BD00951CD8 /* MyDogsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */; };
 		1D1664D628D49BC200951CD8 /* DogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664D528D49BC200951CD8 /* DogStore.swift */; };
@@ -21,21 +21,21 @@
 		1D1664E128D4F0CD00951CD8 /* DogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E028D4F0CD00951CD8 /* DogModel.swift */; };
 		1D1664E328D62FF100951CD8 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E228D62FF100951CD8 /* ViewState.swift */; };
 		1D1664E828D8EDCA00951CD8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E728D8EDCA00951CD8 /* ViewExtension.swift */; };
+		1D737A7528E61AE20008CE9C /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D737A7428E61AE20008CE9C /* FileManagerExtensions.swift */; };
 		1DB90B3528DFA33D00B6A4F4 /* DogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB90B3428DFA33D00B6A4F4 /* DogError.swift */; };
 		1DF4E46828D90B9E00599EB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46728D90B9E00599EB3 /* ViewModel.swift */; };
 		1DF4E46A28D9EFF500599EB3 /* SavedDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46928D9EFF500599EB3 /* SavedDog.swift */; };
 		1DF4E46C28DA3ACE00599EB3 /* DogModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */; };
-		1DF4E46E28DB8D9D00599EB3 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46D28DB8D9D00599EB3 /* FileManagerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D1664BC28D3B02300951CD8 /* MyBeautifulDogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyBeautifulDogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1664BF28D3B02300951CD8 /* MyBeautifulDogsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBeautifulDogsApp.swift; sourceTree = "<group>"; };
-		1D1664C128D3B02300951CD8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D1664C128D3B02300951CD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1D1664C328D3B02500951CD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D1664C628D3B02500951CD8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D1664C828D3B02500951CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D1664CF28D3B18200951CD8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		1D1664CF28D3B18200951CD8 /* DogsCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsCardsView.swift; sourceTree = "<group>"; };
 		1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogDetailView.swift; sourceTree = "<group>"; };
 		1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDogsView.swift; sourceTree = "<group>"; };
 		1D1664D528D49BC200951CD8 /* DogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogStore.swift; sourceTree = "<group>"; };
@@ -45,11 +45,11 @@
 		1D1664E028D4F0CD00951CD8 /* DogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModel.swift; sourceTree = "<group>"; };
 		1D1664E228D62FF100951CD8 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		1D1664E728D8EDCA00951CD8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		1D737A7428E61AE20008CE9C /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		1DB90B3428DFA33D00B6A4F4 /* DogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogError.swift; sourceTree = "<group>"; };
 		1DF4E46728D90B9E00599EB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1DF4E46928D9EFF500599EB3 /* SavedDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDog.swift; sourceTree = "<group>"; };
 		1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModalView.swift; sourceTree = "<group>"; };
-		1DF4E46D28DB8D9D00599EB3 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileManagerExtensions.swift; path = Extensions/FileManagerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,15 +82,8 @@
 		1D1664BE28D3B02300951CD8 /* MyBeautifulDogs */ = {
 			isa = PBXGroup;
 			children = (
-				1D1664E628D8EDB700951CD8 /* Extensions */,
-				1D1664BF28D3B02300951CD8 /* MyBeautifulDogsApp.swift */,
-				1DF4E46D28DB8D9D00599EB3 /* FileManagerExtensions.swift */,
-				1D1664CE28D3B0B300951CD8 /* VIews */,
-				1D1664C328D3B02500951CD8 /* Assets.xcassets */,
-				1D1664D728D49DFB00951CD8 /* Models */,
-				1D1664C828D3B02500951CD8 /* Info.plist */,
-				1D1664D828D49F7D00951CD8 /* Config */,
-				1D1664C528D3B02500951CD8 /* Preview Content */,
+				1D737A7128E6142C0008CE9C /* Sources */,
+				1D737A7228E6143D0008CE9C /* Resources */,
 			);
 			path = MyBeautifulDogs;
 			sourceTree = "<group>";
@@ -103,15 +96,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		1D1664CE28D3B0B300951CD8 /* VIews */ = {
+		1D1664CE28D3B0B300951CD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D737A7728E6219F0008CE9C /* MyDogs */,
+				1D737A7328E61A290008CE9C /* DogCardsView */,
+				1D737A7628E61C5A0008CE9C /* DogsListView */,
 				1D1664DB28D4A55C00951CD8 /* SingleCardView */,
-				1D1664C128D3B02300951CD8 /* ContentView.swift */,
-				1D1664CF28D3B18200951CD8 /* MainView.swift */,
-				1D1664DE28D4D37E00951CD8 /* CardsListView.swift */,
+				1D1664C128D3B02300951CD8 /* MainView.swift */,
 			);
-			path = VIews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		1D1664D728D49DFB00951CD8 /* Models */ = {
@@ -140,7 +134,6 @@
 			children = (
 				1D1664DC28D4A5CF00951CD8 /* SingleCardView.swift */,
 				1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */,
-				1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */,
 				1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */,
 			);
 			path = SingleCardView;
@@ -149,9 +142,56 @@
 		1D1664E628D8EDB700951CD8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1D737A7428E61AE20008CE9C /* FileManagerExtensions.swift */,
 				1D1664E728D8EDCA00951CD8 /* ViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1D737A7128E6142C0008CE9C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				1D1664BF28D3B02300951CD8 /* MyBeautifulDogsApp.swift */,
+				1D1664CE28D3B0B300951CD8 /* Views */,
+				1D1664D728D49DFB00951CD8 /* Models */,
+				1D1664E628D8EDB700951CD8 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1D737A7228E6143D0008CE9C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D1664C528D3B02500951CD8 /* Preview Content */,
+				1D1664D828D49F7D00951CD8 /* Config */,
+				1D1664C828D3B02500951CD8 /* Info.plist */,
+				1D1664C328D3B02500951CD8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1D737A7328E61A290008CE9C /* DogCardsView */ = {
+			isa = PBXGroup;
+			children = (
+				1D1664CF28D3B18200951CD8 /* DogsCardsView.swift */,
+			);
+			path = DogCardsView;
+			sourceTree = "<group>";
+		};
+		1D737A7628E61C5A0008CE9C /* DogsListView */ = {
+			isa = PBXGroup;
+			children = (
+				1D1664DE28D4D37E00951CD8 /* CardsListView.swift */,
+			);
+			path = DogsListView;
+			sourceTree = "<group>";
+		};
+		1D737A7728E6219F0008CE9C /* MyDogs */ = {
+			isa = PBXGroup;
+			children = (
+				1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */,
+			);
+			path = MyDogs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,9 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1664D628D49BC200951CD8 /* DogStore.swift in Sources */,
-				1DF4E46E28DB8D9D00599EB3 /* FileManagerExtensions.swift in Sources */,
-				1D1664C228D3B02300951CD8 /* ContentView.swift in Sources */,
-				1D1664D028D3B18200951CD8 /* MainView.swift in Sources */,
+				1D1664C228D3B02300951CD8 /* MainView.swift in Sources */,
+				1D1664D028D3B18200951CD8 /* DogsCardsView.swift in Sources */,
 				1D1664E328D62FF100951CD8 /* ViewState.swift in Sources */,
 				1D1664D428D3B1BD00951CD8 /* MyDogsView.swift in Sources */,
 				1D1664DF28D4D37E00951CD8 /* CardsListView.swift in Sources */,
@@ -234,6 +273,7 @@
 				1DF4E46828D90B9E00599EB3 /* ViewModel.swift in Sources */,
 				1D1664E828D8EDCA00951CD8 /* ViewExtension.swift in Sources */,
 				1D1664DA28D49F9700951CD8 /* Settings.swift in Sources */,
+				1D737A7528E61AE20008CE9C /* FileManagerExtensions.swift in Sources */,
 				1D1664E128D4F0CD00951CD8 /* DogModel.swift in Sources */,
 				1DF4E46A28D9EFF500599EB3 /* SavedDog.swift in Sources */,
 				1D1664D228D3B1AD00951CD8 /* DogDetailView.swift in Sources */,
@@ -368,10 +408,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MyBeautifulDogs/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MyBeautifulDogs/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = CHL34W9FC3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MyBeautifulDogs/Info.plist;
+				INFOPLIST_FILE = MyBeautifulDogs/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -390,10 +430,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"MyBeautifulDogs/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MyBeautifulDogs/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = CHL34W9FC3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = MyBeautifulDogs/Info.plist;
+				INFOPLIST_FILE = MyBeautifulDogs/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

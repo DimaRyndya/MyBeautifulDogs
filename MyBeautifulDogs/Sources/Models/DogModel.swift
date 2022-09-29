@@ -1,4 +1,8 @@
-enum BreedName: Codable {
+enum BreedName {
+
+    enum CodingError: Error {
+        case unknownValue
+    }
     
     case bostonTerrier
     case stBernardPuppy
@@ -62,10 +66,14 @@ enum BreedName: Codable {
             
         }
     }
-    enum CodingError: Error {
-        case unknownValue
+}
+
+extension BreedName: Codable {
+
+    enum CodingKeys: CodingKey {
+        case breedName
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let breedName = try container.decode(String.self, forKey: .breedName)
@@ -94,13 +102,9 @@ enum BreedName: Codable {
             throw CodingError.unknownValue
         }
     }
-    
+
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.dogBreed, forKey: .breedName)
-    }
-    
-    enum CodingKeys: CodingKey {
-        case breedName
     }
 }

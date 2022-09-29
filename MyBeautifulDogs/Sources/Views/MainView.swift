@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     @EnvironmentObject var viewState: ViewState
     @Binding var selectedTab: Int
     
@@ -9,7 +9,7 @@ struct ContentView: View {
         if viewState.showAllCards {
             HStack(alignment: .top) {
                 TabView(selection: $selectedTab) {
-                    MainView()
+                    DogsCardsView()
                         .tabItem {
                             Image(systemName: "house")
                             Text("Dogs Cards")
@@ -42,7 +42,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(selectedTab: .constant(1))
+        MainView(selectedTab: .constant(1))
             .environmentObject(ViewState())
             .environmentObject(ViewModel())
     }
