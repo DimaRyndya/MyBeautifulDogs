@@ -1,12 +1,17 @@
 import SwiftUI
 
+enum Dimensions {
+    static let adaptive: CGFloat = 120
+    static let spacing: CGFloat = 10
+}
+
 struct DogsCardsView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var viewModel: ViewModel
     
     let columns = [
-        GridItem(.adaptive(minimum: 120), spacing: 10),
-        GridItem(.adaptive(minimum: 120), spacing: 10)
+        GridItem(.adaptive(minimum: Dimensions.adaptive), spacing: Dimensions.spacing),
+        GridItem(.adaptive(minimum: Dimensions.adaptive), spacing: Dimensions.spacing)
     ]
     
     var body: some View {

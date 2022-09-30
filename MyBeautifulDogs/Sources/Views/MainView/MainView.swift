@@ -2,13 +2,11 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var viewState: ViewState
-    @Binding var selectedTab: Int
-    
     
     var body: some View {
         if viewState.showAllCards {
             HStack(alignment: .top) {
-                TabView(selection: $selectedTab) {
+                TabView(selection: $viewState.selectedTab) {
                     DogsCardsView()
                         .tabItem {
                             Image(systemName: "house")
@@ -42,7 +40,7 @@ struct MainView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(selectedTab: .constant(1))
+        MainView()
             .environmentObject(ViewState())
             .environmentObject(ViewModel())
     }

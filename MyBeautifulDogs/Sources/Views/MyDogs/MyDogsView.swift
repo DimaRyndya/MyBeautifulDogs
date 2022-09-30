@@ -2,11 +2,8 @@ import SwiftUI
 
 struct MyDogsView: View {
     @EnvironmentObject var viewModel: ViewModel
-    @State private var isPresented = false
     
     var body: some View {
-        
-        
         NavigationView {
             ZStack {
                 List(0..<viewModel.getSavedDogs().count, id: \.self) { selectedDog in
