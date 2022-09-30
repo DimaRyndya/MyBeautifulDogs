@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct MyDogsView: View {
-    var myDogs: MyDogsModel
+    @EnvironmentObject var myDogs: MyDogsModel
+    
     var allDogs: AllDogsModel
     
     var body: some View {
@@ -17,7 +18,7 @@ struct MyDogsView: View {
                             .cornerRadius(Dimensions.cornerRadius)
                             .scaledToFit()
                         VStack {
-                            Button(action: {myDogs.removeSavedDog(for: selectedDog) }) {
+                            Button(action: { myDogs.removeSavedDog(for: selectedDog) }) {
                                 Image(systemName: "xmark.circle")
                             }
                             .buttonStyle(PlainButtonStyle())
@@ -30,7 +31,7 @@ struct MyDogsView: View {
                     Spacer()
                     HStack {
                       Spacer()
-                        NavigationLink(destination: DogModalView(allDogs: allDogs, myDogs: myDogs)) {
+                        NavigationLink(destination: DogModalView(allDogs: allDogs)) {
                             Image(systemName: "plus")
                                 .font(.largeTitle)
                                 .foregroundColor(.blue)
@@ -50,6 +51,7 @@ struct MyDogsView: View {
 
 struct MyDogsView_Previews: PreviewProvider {
     static var previews: some View {
-        MyDogsView(myDogs: MyDogsModel(), allDogs: AllDogsModel())
+        MyDogsView(allDogs: AllDogsModel())
+            .environmentObject(MyDogsModel())
     }
 }

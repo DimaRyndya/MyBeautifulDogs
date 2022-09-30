@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct DogDetailView: View {
+    @StateObject private var myDogs = MyDogsModel()
     @EnvironmentObject var viewState: ViewState
-    var myDogs: MyDogsModel
-    
+
     var body: some View {
         VStack {
             Image(viewState.selectedDogCard?.dogImage ?? "")
@@ -43,7 +43,8 @@ struct DogDetailView: View {
 
 struct DogDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DogDetailView(myDogs: MyDogsModel())
+        DogDetailView()
             .environmentObject(ViewState())
+            .environmentObject(MyDogsModel())
     }
 }

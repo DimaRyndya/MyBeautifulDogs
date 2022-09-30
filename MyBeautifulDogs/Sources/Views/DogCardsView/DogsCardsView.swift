@@ -8,6 +8,7 @@ enum Dimensions {
 
 struct DogsCardsView: View {
     @EnvironmentObject var viewState: ViewState
+    
     var allDogs: AllDogsModel
     
     let columns = [
@@ -34,6 +35,5 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         DogsCardsView(allDogs: AllDogsModel())
             .environmentObject(ViewState())
-         //   .environmentObject(AllDogsModel())
     }
 }

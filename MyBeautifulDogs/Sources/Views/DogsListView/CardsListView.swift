@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CardsListView: View {
     @EnvironmentObject var viewState: ViewState
+
     var allDogs: AllDogsModel
     
     var body: some View {

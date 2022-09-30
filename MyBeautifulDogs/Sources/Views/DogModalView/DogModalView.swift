@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct DogModalView: View {
+   @StateObject private var myDogs = MyDogsModel()
+    
     var allDogs: AllDogsModel
-    var myDogs: MyDogsModel
     
     var body: some View {
         List(0..<allDogs.getAllDogBreeds().count, id: \.self) { dog in
@@ -29,6 +30,7 @@ struct DogModalView: View {
 }
 struct DogModalView_Previews: PreviewProvider {
     static var previews: some View {
-        DogModalView(allDogs: AllDogsModel(), myDogs: MyDogsModel())
+        DogModalView(allDogs: AllDogsModel())
+            .environmentObject(MyDogsModel())
     }
 }

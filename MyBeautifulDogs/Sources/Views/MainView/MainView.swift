@@ -10,8 +10,9 @@ enum Configuraions {
 
 struct MainView: View {
     @EnvironmentObject var viewState: ViewState
+    @EnvironmentObject var myDogs: MyDogsModel
+    
     var allDogs = AllDogsModel()
-    var myDogs = MyDogsModel()
     
     var body: some View {
         if viewState.showAllCards {
@@ -29,7 +30,7 @@ struct MainView: View {
                             Text(Configuraions.dogsList)
                         }
                         .tag(2)
-                    MyDogsView(myDogs: myDogs, allDogs: allDogs)
+                    MyDogsView(allDogs: allDogs)
                         .tabItem {
                             Image(systemName: "suit.heart")
                             Text(Configuraions.myDogs)
@@ -40,7 +41,7 @@ struct MainView: View {
         }
         if !viewState.showAllCards {
             NavigationView {
-                DogDetailView(myDogs: myDogs)
+                DogDetailView()
                     .navigationBarTitleDisplayMode(.inline)
             }
             .navigationViewStyle(StackNavigationViewStyle())
@@ -52,5 +53,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(ViewState())
+            .environmentObject(MyDogsModel())
     }
 }
