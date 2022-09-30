@@ -1,19 +1,20 @@
 import SwiftUI
 
 struct DogModalView: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var allDogs: AllDogsModel
+    @EnvironmentObject var myDogs: MyDogsModel
     
     var body: some View {
-        List(0..<viewModel.getAllDogBreeds().count, id: \.self) { dog in
+        List(0..<allDogs.getAllDogBreeds().count, id: \.self) { dog in
             HStack {
-                SingleCardView(dogImage: viewModel.getSelectedDogInfo(dog: dog).dogImage)
+                SingleCardView(dogImage: allDogs.getSelectedDogInfo(dog: dog).dogImage)
                 VStack {
-                    Text(viewModel.getSelectedDogInfo(dog: dog).dogBreed)
+                    Text(allDogs.getSelectedDogInfo(dog: dog).dogBreed)
                     Button("Choose Dog") {
                         alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
-                            viewModel.addSavedDog(
+                            myDogs.addSavedDog(
                                 dogName: text,
-                                dogCard: viewModel.getSelectedDogInfo(dog: dog))
+                                dogCard: allDogs.getSelectedDogInfo(dog: dog))
                         } secondaryAction: {
                         }
                     }
@@ -29,6 +30,7 @@ struct DogModalView: View {
 struct DogModalView_Previews: PreviewProvider {
     static var previews: some View {
         DogModalView()
-            .environmentObject(ViewModel())
+            .environmentObject(AllDogsModel())
+            .environmentObject(MyDogsModel())
     }
 }

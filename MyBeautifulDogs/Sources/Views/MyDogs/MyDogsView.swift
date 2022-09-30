@@ -1,14 +1,14 @@
 import SwiftUI
 
 struct MyDogsView: View {
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var myDogs: MyDogsModel
     
     var body: some View {
         NavigationView {
             ZStack {
-                List(0..<viewModel.getSavedDogs().count, id: \.self) { selectedDog in
+                List(0..<myDogs.getSavedDogs().count, id: \.self) { selectedDog in
                     HStack {
-                        Image(viewModel.getSavedDogImage(for: selectedDog))
+                        Image(myDogs.getSavedDogImage(for: selectedDog))
                             .resizable()
                             .frame(
                                 width: Settings.mainScreenCardSize.width,
@@ -16,8 +16,8 @@ struct MyDogsView: View {
                             .cornerRadius(20)
                             .scaledToFit()
                         VStack {
-                            Text(viewModel.getSavedDogName(for: selectedDog))
-                            Text(viewModel.getSavedDogBreed(for: selectedDog))
+                            Text(myDogs.getSavedDogName(for: selectedDog))
+                            Text(myDogs.getSavedDogBreed(for: selectedDog))
                         }
                     }
                 }
@@ -46,6 +46,6 @@ struct MyDogsView: View {
 struct MyDogsView_Previews: PreviewProvider {
     static var previews: some View {
         MyDogsView()
-            .environmentObject(ViewModel())
+            .environmentObject(AllDogsModel())
     }
 }

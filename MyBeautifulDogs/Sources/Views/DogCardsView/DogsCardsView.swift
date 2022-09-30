@@ -8,7 +8,7 @@ enum Dimensions {
 
 struct DogsCardsView: View {
     @EnvironmentObject var viewState: ViewState
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var allDogs: AllDogsModel
     
     let columns = [
         GridItem(.adaptive(minimum: Dimensions.adaptive), spacing: Dimensions.spacing),
@@ -18,11 +18,11 @@ struct DogsCardsView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: columns) {
-                ForEach(0..<viewModel.getAllDogBreeds().count) { dog in
-                    SingleCardView(dogImage: viewModel.getSelectedDogInfo(dog: dog).dogImage)
+                ForEach(0..<allDogs.getAllDogBreeds().count) { dog in
+                    SingleCardView(dogImage: allDogs.getSelectedDogInfo(dog: dog).dogImage)
                         .onTapGesture {
                             viewState.showAllCards.toggle()
-                            viewState.selectedDogCard = viewModel.getSelectedDogInfo(dog: dog)
+                            viewState.selectedDogCard = allDogs.getSelectedDogInfo(dog: dog)
                         }
                 }
             }
@@ -34,6 +34,6 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         DogsCardsView()
             .environmentObject(ViewState())
-            .environmentObject(ViewModel())
+            .environmentObject(AllDogsModel())
     }
 }

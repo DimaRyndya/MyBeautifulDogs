@@ -2,7 +2,7 @@ import SwiftUI
 
 struct DogDetailView: View {
     @EnvironmentObject var viewState: ViewState
-    @EnvironmentObject var viewModel: ViewModel
+    @EnvironmentObject var myDogs: MyDogsModel
     
     var body: some View {
         VStack {
@@ -13,15 +13,15 @@ struct DogDetailView: View {
                 .cornerRadius(Dimensions.cornerRadius)
             Text(viewState.selectedDogCard?.dogBreed ?? "")
 
-            if viewModel.getUserDogsCount(for: viewState.selectedDogCard) == 0 {
+            if myDogs.getUserDogsCount(for: viewState.selectedDogCard) == 0 {
                 Text("")
             } else {
-                Text("\(viewModel.getUserDogsCount(for: viewState.selectedDogCard))")
+                Text("\(myDogs.getUserDogsCount(for: viewState.selectedDogCard))")
             }
             
             Button("Add Dog") {
                 alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
-                    viewModel.addSavedDog(
+                    myDogs.addSavedDog(
                         dogName: text,
                         dogCard: viewState.selectedDogCard)
                 } secondaryAction: {
@@ -45,6 +45,6 @@ struct DogDetailView_Previews: PreviewProvider {
     static var previews: some View {
         DogDetailView()
             .environmentObject(ViewState())
-            .environmentObject(ViewModel())
+            .environmentObject(AllDogsModel())
     }
 }

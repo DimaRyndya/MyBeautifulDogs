@@ -22,8 +22,9 @@
 		1D1664E328D62FF100951CD8 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E228D62FF100951CD8 /* ViewState.swift */; };
 		1D1664E828D8EDCA00951CD8 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1664E728D8EDCA00951CD8 /* ViewExtension.swift */; };
 		1D737A7528E61AE20008CE9C /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D737A7428E61AE20008CE9C /* FileManagerExtensions.swift */; };
+		1D737A7A28E75D9E0008CE9C /* MyDogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D737A7928E75D9E0008CE9C /* MyDogsModel.swift */; };
 		1DB90B3528DFA33D00B6A4F4 /* DogError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB90B3428DFA33D00B6A4F4 /* DogError.swift */; };
-		1DF4E46828D90B9E00599EB3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46728D90B9E00599EB3 /* ViewModel.swift */; };
+		1DF4E46828D90B9E00599EB3 /* AllDogsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46728D90B9E00599EB3 /* AllDogsModel.swift */; };
 		1DF4E46A28D9EFF500599EB3 /* SavedDog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46928D9EFF500599EB3 /* SavedDog.swift */; };
 		1DF4E46C28DA3ACE00599EB3 /* DogModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */; };
 /* End PBXBuildFile section */
@@ -46,8 +47,9 @@
 		1D1664E228D62FF100951CD8 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		1D1664E728D8EDCA00951CD8 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		1D737A7428E61AE20008CE9C /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
+		1D737A7928E75D9E0008CE9C /* MyDogsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDogsModel.swift; sourceTree = "<group>"; };
 		1DB90B3428DFA33D00B6A4F4 /* DogError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogError.swift; sourceTree = "<group>"; };
-		1DF4E46728D90B9E00599EB3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1DF4E46728D90B9E00599EB3 /* AllDogsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDogsModel.swift; sourceTree = "<group>"; };
 		1DF4E46928D9EFF500599EB3 /* SavedDog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDog.swift; sourceTree = "<group>"; };
 		1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +116,7 @@
 				1D1664D528D49BC200951CD8 /* DogStore.swift */,
 				1D1664E028D4F0CD00951CD8 /* DogModel.swift */,
 				1D1664E228D62FF100951CD8 /* ViewState.swift */,
-				1DF4E46728D90B9E00599EB3 /* ViewModel.swift */,
+				1DF4E46728D90B9E00599EB3 /* AllDogsModel.swift */,
 				1DB90B3428DFA33D00B6A4F4 /* DogError.swift */,
 				1DF4E46928D9EFF500599EB3 /* SavedDog.swift */,
 			);
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				1D1664D328D3B1BD00951CD8 /* MyDogsView.swift */,
+				1D737A7928E75D9E0008CE9C /* MyDogsModel.swift */,
 			);
 			path = MyDogs;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D737A7A28E75D9E0008CE9C /* MyDogsModel.swift in Sources */,
 				1D1664D628D49BC200951CD8 /* DogStore.swift in Sources */,
 				1D1664C228D3B02300951CD8 /* MainView.swift in Sources */,
 				1D1664D028D3B18200951CD8 /* DogsCardsView.swift in Sources */,
@@ -278,7 +282,7 @@
 				1D1664D428D3B1BD00951CD8 /* MyDogsView.swift in Sources */,
 				1D1664DF28D4D37E00951CD8 /* CardsListView.swift in Sources */,
 				1DB90B3528DFA33D00B6A4F4 /* DogError.swift in Sources */,
-				1DF4E46828D90B9E00599EB3 /* ViewModel.swift in Sources */,
+				1DF4E46828D90B9E00599EB3 /* AllDogsModel.swift in Sources */,
 				1D1664E828D8EDCA00951CD8 /* ViewExtension.swift in Sources */,
 				1D1664DA28D49F9700951CD8 /* Settings.swift in Sources */,
 				1D737A7528E61AE20008CE9C /* FileManagerExtensions.swift in Sources */,
