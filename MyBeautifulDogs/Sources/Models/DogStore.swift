@@ -55,7 +55,7 @@ class DogStore: Codable {
     
     func isDogExists(dog: SavedDog) -> Bool {
         let filteredUserDogs = userDogs.filter { $0.dogName == dog.dogName && $0.breedName?.dogBreed == dog.breedName?.dogBreed}
-        return filteredUserDogs.isEmpty
+        return !filteredUserDogs.isEmpty
     }
     
     func addSavedDog(dogName: String, dogCard: BreedName?) throws {

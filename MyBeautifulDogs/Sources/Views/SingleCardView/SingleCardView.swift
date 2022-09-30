@@ -1,12 +1,11 @@
 import SwiftUI
 
 struct SingleCardView: View {
-    @EnvironmentObject var viewModel: ViewModel
     
-    var index: Int
+    var dogImage: String
     
     var body: some View {
-        Image(viewModel.getAllDogBreedsImage(index: index))
+        Image(dogImage)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(
@@ -20,7 +19,7 @@ struct SingleCardView: View {
 
 struct SingleCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleCardView(index: 1)
+        SingleCardView(dogImage: "border")
             .environmentObject(ViewModel())
     }
 }

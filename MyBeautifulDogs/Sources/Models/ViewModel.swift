@@ -5,18 +5,19 @@ class ViewModel: ObservableObject {
     private var dogStore = DogStore()
     
     
-    func getSelectedDogBreedName(dog: Int) -> BreedName {
-        dogStore.allDogBreeds[dog]
+    func getSelectedDogInfo(dog: Int) -> BreedName {
+        let dogInfo = dogStore.allDogBreeds[dog]
+        return dogInfo
     }
     
-    func getSelectedDogBreed(dog: Int) -> String {
-        let breed = dogStore.allDogBreeds[dog].dogBreed
-        return breed
-    }
-    
-    func getAllDogBreedsImage(index: Int) -> String {
-        dogStore.allDogBreeds[index].dogImage
-    }
+//    func getSelectedDogBreed(dog: Int) -> String {
+//        let breed = dogStore.allDogBreeds[dog].dogBreed
+//        return breed
+//    }
+//    
+//    func getAllDogBreedsImage(index: Int) -> String {
+//        dogStore.allDogBreeds[index].dogImage
+//    }
     
     func getAllDogBreeds() -> [BreedName] {
         dogStore.allDogBreeds

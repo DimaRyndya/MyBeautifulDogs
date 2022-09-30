@@ -13,10 +13,10 @@ struct DogsCardsView: View {
         ScrollView(showsIndicators: false) {
             LazyVGrid(columns: columns) {
                 ForEach(0..<viewModel.getAllDogBreeds().count) { dog in
-                    SingleCardView(index: dog)
+                    SingleCardView(dogImage: viewModel.getSelectedDogInfo(dog: dog).dogImage)
                         .onTapGesture {
                             viewState.showAllCards.toggle()
-                            viewState.selectedDogCard = viewModel.getSelectedDogBreedName(dog: dog)
+                            viewState.selectedDogCard = viewModel.getSelectedDogInfo(dog: dog)
                         }
                 }
             }
