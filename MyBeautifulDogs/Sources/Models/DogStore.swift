@@ -14,7 +14,7 @@ class DogStore: Codable {
         BreedName.frenchBulldog
     ]
     
-    private(set) var userDogs: [SavedDog] = []
+    var userDogs: [SavedDog] = []
     
     private let documentURL = "dogsStore.rwcard"
     
@@ -57,6 +57,8 @@ class DogStore: Codable {
         let filteredUserDogs = userDogs.filter { $0.dogName == dog.dogName && $0.breedName?.dogBreed == dog.breedName?.dogBreed}
         return !filteredUserDogs.isEmpty
     }
+
+    //MARK: Adding saved dog to array savedDogs
     
     func addSavedDog(dogName: String, dogCard: BreedName?) throws {
         var savedDog = SavedDog()
@@ -72,6 +74,14 @@ class DogStore: Codable {
             throw DogError.dogAlreadyExists
         }
     }
+
+    //MARK: Removing saved dog from savedDogs arrey
+
+    func removeSavedDog(for selectedDog: Int) {
+        userDogs.remove(at: selectedDog)
+        save()
+    }
+
 
     //MARK: Encoding and Decoding DogSctore date
 

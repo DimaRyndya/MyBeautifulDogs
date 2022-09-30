@@ -101,6 +101,7 @@
 		1D1664CE28D3B0B300951CD8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D737A7B28E764EC0008CE9C /* DogModalView */,
 				1D737A7828E758680008CE9C /* MainView */,
 				1D737A7728E6219F0008CE9C /* MyDogs */,
 				1D737A7328E61A290008CE9C /* DogCardsView */,
@@ -136,7 +137,6 @@
 			children = (
 				1D1664DC28D4A5CF00951CD8 /* SingleCardView.swift */,
 				1D1664D128D3B1AD00951CD8 /* DogDetailView.swift */,
-				1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */,
 			);
 			path = SingleCardView;
 			sourceTree = "<group>";
@@ -203,6 +203,14 @@
 				1D1664C128D3B02300951CD8 /* MainView.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		1D737A7B28E764EC0008CE9C /* DogModalView */ = {
+			isa = PBXGroup;
+			children = (
+				1DF4E46B28DA3ACE00599EB3 /* DogModalView.swift */,
+			);
+			path = DogModalView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

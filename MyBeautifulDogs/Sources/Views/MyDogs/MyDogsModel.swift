@@ -31,4 +31,15 @@ class MyDogsModel: ObservableObject {
         let dogName = dogStore.userDogs[selectedDog]
         return dogName
     }
+    
+    //MARK: Removing saved dog from savedDogs arrey
+
+    func removeSavedDog(for selectedDog: Int) {
+        dogStore.removeSavedDog(for: selectedDog)
+        objectWillChange.send()
+    }
 }
+
+
+
+

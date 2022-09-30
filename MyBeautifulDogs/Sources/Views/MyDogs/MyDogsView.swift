@@ -16,6 +16,10 @@ struct MyDogsView: View {
                             .cornerRadius(20)
                             .scaledToFit()
                         VStack {
+                            Button(action: {myDogs.removeSavedDog(for: selectedDog) }) {
+                                Image(systemName: "xmark.circle")
+                            }
+                            .buttonStyle(PlainButtonStyle())
                             Text(myDogs.getSavedDogInfo(for: selectedDog).dogName)
                             Text(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogBreed ?? "")
                         }
@@ -46,6 +50,6 @@ struct MyDogsView: View {
 struct MyDogsView_Previews: PreviewProvider {
     static var previews: some View {
         MyDogsView()
-            .environmentObject(AllDogsModel())
+            .environmentObject(MyDogsModel())
     }
 }
