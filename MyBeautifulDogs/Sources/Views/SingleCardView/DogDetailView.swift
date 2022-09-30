@@ -10,7 +10,7 @@ struct DogDetailView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: Settings.dogDetailCardSize.width, height: Settings.dogDetailCardSize.height)
-                .cornerRadius(20)
+                .cornerRadius(Dimensions.cornerRadius)
             Text(viewState.selectedDogCard?.dogBreed ?? "")
 
             if viewModel.getUserDogsCount(for: viewState.selectedDogCard) == 0 {

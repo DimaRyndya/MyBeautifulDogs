@@ -3,6 +3,7 @@ import SwiftUI
 enum Dimensions {
     static let adaptive: CGFloat = 120
     static let spacing: CGFloat = 10
+    static let cornerRadius: CGFloat = 20
 }
 
 struct DogsCardsView: View {

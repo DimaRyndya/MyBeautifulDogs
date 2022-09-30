@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct SingleCardView: View {
-    
     var dogImage: String
     
     var body: some View {
@@ -11,7 +10,7 @@ struct SingleCardView: View {
             .frame(
                 width: Settings.mainScreenCardSize.width,
                 height: Settings.mainScreenCardSize.height)
-            .cornerRadius(20)
+            .cornerRadius(Dimensions.cornerRadius)
 
     }
     

@@ -5,7 +5,7 @@ struct MainView: View {
     
     var body: some View {
         if viewState.showAllCards {
-            HStack(alignment: .top) {
+            HStack {
                 TabView(selection: $viewState.selectedTab) {
                     DogsCardsView()
                         .tabItem {
