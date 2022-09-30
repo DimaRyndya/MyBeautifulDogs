@@ -8,7 +8,7 @@ struct MyDogsView: View {
             ZStack {
                 List(0..<myDogs.getSavedDogs().count, id: \.self) { selectedDog in
                     HStack {
-                        Image(myDogs.getSavedDogImage(for: selectedDog))
+                        Image(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogImage ?? "")
                             .resizable()
                             .frame(
                                 width: Settings.mainScreenCardSize.width,
@@ -16,8 +16,8 @@ struct MyDogsView: View {
                             .cornerRadius(20)
                             .scaledToFit()
                         VStack {
-                            Text(myDogs.getSavedDogName(for: selectedDog))
-                            Text(myDogs.getSavedDogBreed(for: selectedDog))
+                            Text(myDogs.getSavedDogInfo(for: selectedDog).dogName)
+                            Text(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogBreed ?? "")
                         }
                     }
                 }

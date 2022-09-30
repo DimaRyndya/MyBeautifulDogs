@@ -27,18 +27,8 @@ class MyDogsModel: ObservableObject {
     }
 
 
-    func getSavedDogName(for selectedDog: Int) -> String {
-        let dogName = dogStore.userDogs[selectedDog].dogName
+    func getSavedDogInfo(for selectedDog: Int) -> SavedDog {
+        let dogName = dogStore.userDogs[selectedDog]
         return dogName
-    }
-
-    func getSavedDogImage(for selectedDog: Int) -> String {
-        let dogImage = dogStore.userDogs[selectedDog].breedName?.dogImage ?? ""
-        return dogImage
-    }
-
-    func getSavedDogBreed(for selectedDog: Int) -> String {
-        let dogBreed = dogStore.userDogs[selectedDog].breedName?.dogBreed ?? ""
-        return dogBreed
     }
 }
