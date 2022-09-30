@@ -13,7 +13,7 @@ struct MyDogsView: View {
                             .frame(
                                 width: Settings.mainScreenCardSize.width,
                                 height: Settings.mainScreenCardSize.height)
-                            .cornerRadius(20)
+                            .cornerRadius(Dimensions.cornerRadius)
                             .scaledToFit()
                         VStack {
                             Button(action: {myDogs.removeSavedDog(for: selectedDog) }) {

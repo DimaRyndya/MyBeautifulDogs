@@ -4,6 +4,8 @@ enum Configuraions {
     static let dogsCards = "Dogs Cards"
     static let dogsList = "Dogs List"
     static let myDogs = "My Dogs"
+    static let backButton = "Back"
+    static let addDogButton = "Add Dog"
 }
 
 struct MainView: View {

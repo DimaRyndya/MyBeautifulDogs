@@ -1,7 +1,6 @@
 import SwiftUI
 
 extension View {
-    
     func alertTF(title: String, message: String, primaryTitle: String, secondaryTitle: String, primaryAction: @escaping (String)->(), secondaryAction: @escaping ()->()) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         

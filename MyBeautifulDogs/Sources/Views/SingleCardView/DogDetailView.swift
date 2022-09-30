@@ -19,7 +19,7 @@ struct DogDetailView: View {
                 Text("\(myDogs.getUserDogsCount(for: viewState.selectedDogCard))")
             }
             
-            Button("Add Dog") {
+            Button(Configuraions.addDogButton) {
                 alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
                     myDogs.addSavedDog(
                         dogName: text,
@@ -33,7 +33,7 @@ struct DogDetailView: View {
                         withAnimation { viewState.showAllCards = true }
                     }) {
                         Image(systemName: "chevron.left")
-                        Text("Back")
+                        Text(Configuraions.backButton)
                     }
                 }
             }
