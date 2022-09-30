@@ -3,9 +3,13 @@ import SwiftUI
 class MyDogsModel: ObservableObject {
     private var dogStore = DogStore()
 
+    //MARK: Getting saving dogs arrey
+
     func getSavedDogs() -> [SavedDog] {
         dogStore.userDogs
     }
+
+    //MARK: Getting userDogs counter
 
     func getUserDogsCount(for selectedCard: BreedName?) -> Int {
         var counter = 0
@@ -13,6 +17,8 @@ class MyDogsModel: ObservableObject {
         counter = filteredUserDogs.count
         return counter
     }
+
+    //MARK: Saving user dog to userDogs array
 
     func addSavedDog(dogName: String, dogCard: BreedName?) {
         do {
@@ -26,6 +32,7 @@ class MyDogsModel: ObservableObject {
         objectWillChange.send()
     }
 
+    //MARK: Gitting saved dog info such as name, breed or image
 
     func getSavedDogInfo(for selectedDog: Int) -> SavedDog {
         let dogName = dogStore.userDogs[selectedDog]

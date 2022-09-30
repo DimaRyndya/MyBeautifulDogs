@@ -36,7 +36,7 @@ struct MyDogsView: View {
                                 .padding()
 
                         }
-                        .navigationBarTitle("My Dogs")
+                        .navigationBarTitle(Configuraions.myDogs)
                         .padding()
                     }
                 }

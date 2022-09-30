@@ -19,6 +19,5 @@ struct SingleCardView: View {
 struct SingleCardView_Previews: PreviewProvider {
     static var previews: some View {
         SingleCardView(dogImage: "border")
-            .environmentObject(AllDogsModel())
     }
 }

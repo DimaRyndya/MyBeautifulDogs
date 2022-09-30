@@ -23,7 +23,9 @@ class DogStore: Codable {
             userDogs = savedStore.userDogs
         }
     }
-    
+
+    //MARK: Saving data to documentURL
+
     func save() {
         do {
             let encoder = JSONEncoder()
@@ -37,7 +39,9 @@ class DogStore: Codable {
             print(error.localizedDescription)
         }
     }
-    
+
+    //MARK: Trying to load data from documentURL
+
     private func tryLoadStoreFromDisc() -> DogStore? {
         let decoder = JSONDecoder()
         if let url = FileManager.documentURL?.appendingPathComponent(documentURL) {
@@ -52,7 +56,9 @@ class DogStore: Codable {
         
         return nil
     }
-    
+
+    //MARK: Cheching if added dog exists in userDogs array
+
     func isDogExists(dog: SavedDog) -> Bool {
         let filteredUserDogs = userDogs.filter { $0.dogName == dog.dogName && $0.breedName?.dogBreed == dog.breedName?.dogBreed}
         return !filteredUserDogs.isEmpty
