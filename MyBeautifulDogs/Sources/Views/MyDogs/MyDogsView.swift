@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct MyDogsView: View {
-    @EnvironmentObject var myDogs: MyDogsModel
+    var myDogs: MyDogsModel
+    var allDogs: AllDogsModel
     
     var body: some View {
         NavigationView {
@@ -29,7 +30,7 @@ struct MyDogsView: View {
                     Spacer()
                     HStack {
                       Spacer()
-                        NavigationLink(destination: DogModalView()) {
+                        NavigationLink(destination: DogModalView(allDogs: allDogs, myDogs: myDogs)) {
                             Image(systemName: "plus")
                                 .font(.largeTitle)
                                 .foregroundColor(.blue)
@@ -49,7 +50,6 @@ struct MyDogsView: View {
 
 struct MyDogsView_Previews: PreviewProvider {
     static var previews: some View {
-        MyDogsView()
-            .environmentObject(MyDogsModel())
+        MyDogsView(myDogs: MyDogsModel(), allDogs: AllDogsModel())
     }
 }

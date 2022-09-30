@@ -8,7 +8,7 @@ enum Dimensions {
 
 struct DogsCardsView: View {
     @EnvironmentObject var viewState: ViewState
-    @EnvironmentObject var allDogs: AllDogsModel
+    var allDogs: AllDogsModel
     
     let columns = [
         GridItem(.adaptive(minimum: Dimensions.adaptive), spacing: Dimensions.spacing),
@@ -32,8 +32,8 @@ struct DogsCardsView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        DogsCardsView()
+        DogsCardsView(allDogs: AllDogsModel())
             .environmentObject(ViewState())
-            .environmentObject(AllDogsModel())
+         //   .environmentObject(AllDogsModel())
     }
 }

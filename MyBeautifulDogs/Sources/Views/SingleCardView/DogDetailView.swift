@@ -2,7 +2,7 @@ import SwiftUI
 
 struct DogDetailView: View {
     @EnvironmentObject var viewState: ViewState
-    @EnvironmentObject var myDogs: MyDogsModel
+    var myDogs: MyDogsModel
     
     var body: some View {
         VStack {
@@ -43,8 +43,7 @@ struct DogDetailView: View {
 
 struct DogDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DogDetailView()
+        DogDetailView(myDogs: MyDogsModel())
             .environmentObject(ViewState())
-            .environmentObject(AllDogsModel())
     }
 }

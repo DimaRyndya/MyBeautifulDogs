@@ -1,6 +1,6 @@
 import SwiftUI
 
-class AllDogsModel: ObservableObject {
+class AllDogsModel {
     private var dogStore = DogStore()
 
     //MARK: Getting dogs info such as breed or image in allDogsBreed

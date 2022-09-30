@@ -2,7 +2,7 @@ import SwiftUI
 
 struct CardsListView: View {
     @EnvironmentObject var viewState: ViewState
-    @EnvironmentObject var allDogs: AllDogsModel
+    var allDogs: AllDogsModel
     
     var body: some View {
         List(0..<allDogs.getAllDogBreeds().count, id: \.self) { dog in
@@ -20,8 +20,7 @@ struct CardsListView: View {
 
 struct CardsListView_Previews: PreviewProvider {
     static var previews: some View {
-        CardsListView()
+        CardsListView(allDogs: AllDogsModel())
             .environmentObject(ViewState())
-            .environmentObject(AllDogsModel())
     }
 }
