@@ -1,11 +1,9 @@
 import SwiftUI
 
-enum Configuraions {
+private enum Configuraions {
     static let dogsCards = "Dogs Cards"
     static let dogsList = "Dogs List"
-    static let myDogs = "My Dogs"
-    static let backButton = "Back"
-    static let addDogButton = "Add Dog"
+    static let myDogsTitle = "My Dogs"
 }
 
 struct MainView: View {
@@ -33,7 +31,7 @@ struct MainView: View {
                     MyDogsView(allDogs: allDogs)
                         .tabItem {
                             Image(systemName: "suit.heart")
-                            Text(Configuraions.myDogs)
+                            Text(Configuraions.myDogsTitle)
                         }
                         .tag(3)
                 }

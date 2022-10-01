@@ -1,5 +1,11 @@
 import SwiftUI
 
+private enum Dimensions {
+    static let cornerRadius: CGFloat = 20
+    static let dogDetailCardSize = CGSize(width: 350, height: 400)
+    static let mainScreenCardSize = CGSize(width: 180, height: 150)
+}
+
 struct SingleCardView: View {
     var dogImage: String
     
@@ -8,8 +14,8 @@ struct SingleCardView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(
-                width: Settings.mainScreenCardSize.width,
-                height: Settings.mainScreenCardSize.height)
+                width: Dimensions.mainScreenCardSize.width,
+                height: Dimensions.mainScreenCardSize.height)
             .cornerRadius(Dimensions.cornerRadius)
 
     }

@@ -1,7 +1,18 @@
 import SwiftUI
 
+private enum Dimensions {
+    static let cornerRadius: CGFloat = 20
+    static let dogDetailCardSize = CGSize(width: 350, height: 400)
+    static let mainScreenCardSize = CGSize(width: 180, height: 150)
+}
+
+private enum Configuraions {
+    static let backButton = "Back"
+    static let addDogButton = "Add Dog"
+}
+
 struct DogDetailView: View {
-    @StateObject private var myDogs = MyDogsModel()
+    @EnvironmentObject var myDogs: MyDogsModel
     @EnvironmentObject var viewState: ViewState
 
     var body: some View {
@@ -9,7 +20,7 @@ struct DogDetailView: View {
             Image(viewState.selectedDogCard?.dogImage ?? "")
                 .resizable()
                 .scaledToFill()
-                .frame(width: Settings.dogDetailCardSize.width, height: Settings.dogDetailCardSize.height)
+                .frame(width: Dimensions.dogDetailCardSize.width, height: Dimensions.dogDetailCardSize.height)
                 .cornerRadius(Dimensions.cornerRadius)
             Text(viewState.selectedDogCard?.dogBreed ?? "")
 

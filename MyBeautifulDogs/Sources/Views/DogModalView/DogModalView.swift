@@ -1,7 +1,12 @@
 import SwiftUI
 
+private enum Configuraions {
+    static let choseDog = "Dogs Cards"
+    static let dogsList = "Dogs List"
+}
+
 struct DogModalView: View {
-   @StateObject private var myDogs = MyDogsModel()
+    @EnvironmentObject private var myDogs: MyDogsModel
     
     var allDogs: AllDogsModel
     
@@ -11,7 +16,7 @@ struct DogModalView: View {
                 SingleCardView(dogImage: allDogs.getSelectedDogInfo(dog: dog).dogImage)
                 VStack {
                     Text(allDogs.getSelectedDogInfo(dog: dog).dogBreed)
-                    Button("Choose Dog") {
+                    Button(Configuraions.choseDog) {
                         alertTF(title: "Adding dog name", message: "Please add dog name", primaryTitle: "Add", secondaryTitle: "Cancel") { text in
                             myDogs.addSavedDog(
                                 dogName: text,
@@ -25,7 +30,7 @@ struct DogModalView: View {
                 }
             }
         }
-        .navigationBarTitle("Dogs List")
+        .navigationBarTitle(Configuraions.dogsList)
     }
 }
 struct DogModalView_Previews: PreviewProvider {

@@ -1,5 +1,15 @@
 import SwiftUI
 
+private enum Configurations {
+    static let myDogsTitle = "My Dogs"
+}
+
+private enum Dimensions {
+    static let cornerRadius: CGFloat = 20
+    static let dogDetailCardSize = CGSize(width: 350, height: 400)
+    static let mainScreenCardSize = CGSize(width: 180, height: 150)
+}
+
 struct MyDogsView: View {
     @EnvironmentObject var myDogs: MyDogsModel
     
@@ -13,8 +23,8 @@ struct MyDogsView: View {
                         Image(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogImage ?? "")
                             .resizable()
                             .frame(
-                                width: Settings.mainScreenCardSize.width,
-                                height: Settings.mainScreenCardSize.height)
+                                width: Dimensions.mainScreenCardSize.width,
+                                height: Dimensions.mainScreenCardSize.height)
                             .cornerRadius(Dimensions.cornerRadius)
                             .scaledToFit()
                         VStack {
@@ -38,7 +48,7 @@ struct MyDogsView: View {
                                 .padding()
 
                         }
-                        .navigationBarTitle(Configuraions.myDogs)
+                        .navigationBarTitle(Configurations.myDogsTitle)
                         .padding()
                     }
                 }
