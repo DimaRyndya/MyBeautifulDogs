@@ -31,10 +31,14 @@ struct MyDogsView: View {
                                 .cornerRadius(Dimensions.cornerRadius)
                                 .scaledToFit()
 
-                            VStack {
+                            VStack(alignment: .leading, spacing: 10) {
                                 Text(myDogs.getSavedDogInfo(for: selectedDog).dogName)
+                                    .fontWeight(.bold)
+                                    .font(.title2)
                                 Text(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogBreed ?? "")
                             }
+                            .padding()
+                            .multilineTextAlignment(.leading)
                         }
                         Button(action: { myDogs.removeSavedDog(for: selectedDog) }) {
                             Image(systemName: "xmark")
