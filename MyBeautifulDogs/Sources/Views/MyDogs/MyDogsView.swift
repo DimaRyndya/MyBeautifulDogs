@@ -8,6 +8,8 @@ private enum Dimensions {
     static let cornerRadius: CGFloat = 20
     static let dogDetailCardSize = CGSize(width: 350, height: 400)
     static let mainScreenCardSize = CGSize(width: 180, height: 150)
+    static let offsetX: CGFloat = 160
+    static let offsetY: CGFloat = -65
 }
 
 struct MyDogsView: View {
@@ -19,28 +21,35 @@ struct MyDogsView: View {
         NavigationView {
             ZStack {
                 List(0..<myDogs.getSavedDogs().count, id: \.self) { selectedDog in
-                    HStack {
-                        Image(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogImage ?? "")
-                            .resizable()
-                            .frame(
-                                width: Dimensions.mainScreenCardSize.width,
-                                height: Dimensions.mainScreenCardSize.height)
-                            .cornerRadius(Dimensions.cornerRadius)
-                            .scaledToFit()
-                        VStack {
-                            Button(action: { myDogs.removeSavedDog(for: selectedDog) }) {
-                                Image(systemName: "xmark.circle")
+                    ZStack {
+                        HStack {
+                            Image(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogImage ?? "")
+                                .resizable()
+                                .frame(
+                                    width: Dimensions.mainScreenCardSize.width,
+                                    height: Dimensions.mainScreenCardSize.height)
+                                .cornerRadius(Dimensions.cornerRadius)
+                                .scaledToFit()
+
+                            VStack {
+                                Text(myDogs.getSavedDogInfo(for: selectedDog).dogName)
+                                Text(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogBreed ?? "")
                             }
-                            .buttonStyle(PlainButtonStyle())
-                            Text(myDogs.getSavedDogInfo(for: selectedDog).dogName)
-                            Text(myDogs.getSavedDogInfo(for: selectedDog).breedName?.dogBreed ?? "")
                         }
+                        Button(action: { myDogs.removeSavedDog(for: selectedDog) }) {
+                            Image(systemName: "xmark")
+                                .font(.title3)
+                                .foregroundColor(.blue)
+                                .padding()
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                        .offset(x: Dimensions.offsetX, y: Dimensions.offsetY)
                     }
                 }
                 VStack {
                     Spacer()
                     HStack {
-                      Spacer()
+                        Spacer()
                         NavigationLink(destination: DogModalView(allDogs: allDogs)) {
                             Image(systemName: "plus")
                                 .font(.largeTitle)
